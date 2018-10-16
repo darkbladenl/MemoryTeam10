@@ -85,14 +85,21 @@ namespace memorygame
                 }
             }
         }
-        
+        /// <summary>
+        /// maakt de kaarten klikbaart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
         }
-
+        /// <summary>
+        /// geeft een lijst met plaatjes terug
+        /// </summary>
+        /// <returns>return images</returns>
         private List<ImageSource> GetImagesList()
         {
             List<ImageSource> images = new List<ImageSource>();
