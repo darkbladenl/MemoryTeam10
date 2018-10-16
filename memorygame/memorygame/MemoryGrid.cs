@@ -30,7 +30,7 @@ namespace memorygame
             this.grid = grid;
             InitializeGameGrid(cols, rows);
             AddImages();
-            AddLabel();                  
+            AddLabel();        
         }         
 
         //METHODEN
@@ -69,7 +69,7 @@ namespace memorygame
         /// </summary>
         private void AddImages()
         {
-            List<ImageSource> images = GetImagesList();
+            List<ImageSource> images = GetImagesList();         
             for (int row = 0; row < rows; row++)
             {
                 for(int column = 0; column < cols; column++)
@@ -86,7 +86,7 @@ namespace memorygame
             }
         }
         /// <summary>
-        /// maakt de kaarten klikbaart
+        /// maakt de kaarten klikbaar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -106,12 +106,11 @@ namespace memorygame
             for(int i = 0; i < 16; i++)
             {
                 int imageNR = i % 8 + 1;
-                ImageSource source = new BitmapImage(new Uri("Resources/Images_Front/" + imageNR + ".png", UriKind.Relative));
+                ImageSource source = new BitmapImage(new Uri("Resources/Images_Front/" + imageNR + ".png", UriKind.Relative));  
                 images.Add(source);
-            }
+            }      
+            
             return images;
         }
-        
-
-    }
+    }   
 }
