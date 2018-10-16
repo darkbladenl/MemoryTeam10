@@ -75,7 +75,7 @@ namespace memorygame
                 for(int column = 0; column < cols; column++)
                 {
                     Image backgroundImage = new Image();
-                    backgroundImage.Source = new BitmapImage(new Uri("Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+                    backgroundImage.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     backgroundImage.Tag = images.First();
                     images.RemoveAt(0);
                     backgroundImage.MouseDown += new MouseButtonEventHandler(CardClick);
@@ -106,7 +106,7 @@ namespace memorygame
             for(int i = 0; i < 16; i++)
             {
                 int imageNR = i % 8 + 1;
-                ImageSource source = new BitmapImage(new Uri("Images_Front/" + imageNR + ".png", UriKind.Relative));
+                ImageSource source = new BitmapImage(new Uri("Resources/Images_Front/" + imageNR + ".png", UriKind.Relative));
                 images.Add(source);
             }
             return images;

@@ -87,7 +87,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Fonts\batman_font.ttf" />
+    <Resource Include="Resources\Fonts\batman_font.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,25 +97,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images_Front\1.png" />
+    <Resource Include="Resources\Images_Front\1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images_Rear\DC_Comics_logo.png" />
+    <Resource Include="Resources\Images_Rear\DC_Comics_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images_Front\3.png" />
+    <Resource Include="Resources\Images_Front\3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images_Front\2.png" />
-    <Resource Include="Images_Front\4.png" />
+    <Resource Include="Resources\Images_Front\2.png" />
+    <Resource Include="Resources\Images_Front\4.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images_Front\5.png" />
-    <Resource Include="Images_Front\6.png" />
-    <Resource Include="Images_Front\8.png" />
+    <Resource Include="Resources\Images_Front\5.png" />
+    <Resource Include="Resources\Images_Front\6.png" />
+    <Resource Include="Resources\Images_Front\8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images_Front\7.png" />
+    <Resource Include="Resources\Images_Front\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
