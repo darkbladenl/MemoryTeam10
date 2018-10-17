@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\memorygame"
+    "\\memorygame",
+    "\\memorygame\\Resources",
+    "\\memorygame\\Resources\\Images_Front"
   ],
-  "SelectedNode": "\\memorygame",
+  "SelectedNode": "\\memorygame\\Resources\\Images_Front\\Batman_logo.png",
   "PreviewInSolutionExplorer": false
 }
