@@ -92,19 +92,38 @@ namespace memorygame
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
         }
-
+        /// <summary>
+        /// plaatst images in een willekeurige volgorde
+        /// </summary>
+        /// <returns>return een lijst met images</returns>
         private List<ImageSource> GetImagesList()
         {
             List<ImageSource> images = new List<ImageSource>();
-            for(int i = 0; i < 16; i++)
+
+            //nieuwe instantie van lijst met kaartjes 1 t/m 8 x2
+            List<int> cardNR = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
+
+            // rnd geeft een willekeurig getal terug
+            Random rnd = new Random();
+            for (int i = 0; i < 16; i++)
             {
-                int imageNR = i % 8 + 1;
+                //index is gelijk aan rnd{willekeurig getal} die Next{niet negatief} is 
+                //en lager dan (cardNR.count){hoeveel items erin de lijst staan}
+                int index = rnd.Next(cardNR.Count);
+
+                //de ImageNR wordt cardNR[index] een random item{een getal} uit de lijst cardNR
+                int imageNR = cardNR[index];
+
+                //het item wordt verwijdert uit de lijst zodat deze niet nog een keer gepakt kan worden
+                cardNR.RemoveAt(index);
+
                 ImageSource source = new BitmapImage(new Uri("Resources/Images_Front/" + imageNR + ".png", UriKind.Relative));
                 images.Add(source);
             }
-            return images;
+            return images; 
         }
         
-
+        
+        
     }
 }
