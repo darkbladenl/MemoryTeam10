@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\memorygame",
-    "\\memorygame\\memorygame"
+    "\\memorygame\\memorygame",
+    "\\memorygame\\memorygame\\Resources",
+    "\\memorygame\\memorygame\\Resources\\Images_Front"
   ],
-  "SelectedNode": "\\memorygame\\memorygame\\MainWindow.xaml",
+  "SelectedNode": "\\memorygame\\memorygame\\Properties",
   "PreviewInSolutionExplorer": true
 }
