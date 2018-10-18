@@ -17,7 +17,9 @@ namespace memorygame
         private Grid grid;
         private const int cols = 4;
         private const int rows = 4;
-
+        //nieuwe instantie van lijst met kaartjes 1 t/m 8 x2
+        private List<int> cards = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
+        private int score = 0;
         //CONSTRUCTORS
         /// <summary>
         /// MemoryGrid bestaat uit een grid met rijen en kolommen, met daarin: Images en Labels
@@ -29,8 +31,9 @@ namespace memorygame
         {
             this.grid = grid;
             InitializeGameGrid(cols, rows);
-            AddImages();
-            AddLabel();                  
+            AddCards();
+            AddLabel();
+            
         }         
 
         //METHODEN
@@ -56,7 +59,7 @@ namespace memorygame
         private void AddLabel()
         {
             Label title = new Label();
-            title.Content = "Memory";
+            title.Content = score;
             title.FontFamily = new FontFamily("batman_font/#BatmanForeverAlternate");
             title.FontSize = 30;
             title.HorizontalAlignment = HorizontalAlignment.Center;
@@ -65,9 +68,9 @@ namespace memorygame
             grid.Children.Add(title);
         }
         /// <summary>
-        /// voegt een image toe, klikbaar
+        /// voegt images toe, klikbaar
         /// </summary>
-        private void AddImages()
+        private void AddCards()
         {
             List<ImageSource> images = GetImagesList();
             for (int row = 0; row < rows; row++)
@@ -87,10 +90,11 @@ namespace memorygame
         }
         
         private void CardClick(object sender, MouseButtonEventArgs e)
-        {
+        {           
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
+            
         }
         /// <summary>
         /// plaatst images in een willekeurige volgorde
@@ -99,31 +103,25 @@ namespace memorygame
         private List<ImageSource> GetImagesList()
         {
             List<ImageSource> images = new List<ImageSource>();
-
-            //nieuwe instantie van lijst met kaartjes 1 t/m 8 x2
-            List<int> cardNR = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
-
+            
             // rnd geeft een willekeurig getal terug
             Random rnd = new Random();
+
             for (int i = 0; i < 16; i++)
             {
                 //index is gelijk aan rnd{willekeurig getal} die Next{niet negatief} is 
-                //en lager dan (cardNR.count){hoeveel items erin de lijst staan}
-                int index = rnd.Next(cardNR.Count);
-
-                //de ImageNR wordt cardNR[index] een random item{een getal} uit de lijst cardNR
-                int imageNR = cardNR[index];
-
-                //het item wordt verwijdert uit de lijst zodat deze niet nog een keer gepakt kan worden
-                cardNR.RemoveAt(index);
-
+                //en lager dan (cardNR.count){hoeveel items erin de lijst staan
+                int index = rnd.Next(cards.Count);
+                int imageNR = cards[index];//de ImageNR wordt cardNR[index] een random item{een getal} uit de lijst cardNR
+                cards.RemoveAt(index);//het item wordt verwijdert uit de lijst zodat deze niet nog een keer gepakt kan worden
                 ImageSource source = new BitmapImage(new Uri("Resources/Images_Front/" + imageNR + ".png", UriKind.Relative));
                 images.Add(source);
             }
             return images; 
         }
+
         
-        
+       
         
     }
 }

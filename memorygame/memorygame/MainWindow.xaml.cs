@@ -23,12 +23,13 @@ namespace memorygame
         private const int cols = 5;
         private const int rows = 4;
         MemoryGrid grid;
+        
 
         public MainWindow()
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, cols, rows);
-
+            
 
 
         }
