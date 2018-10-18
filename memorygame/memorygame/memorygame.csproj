@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -47,7 +48,6 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +94,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Front\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Rear\DC_Comics_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Front\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Front\2.png" />
+    <Resource Include="Resources\Images_Front\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Front\5.png" />
+    <Resource Include="Resources\Images_Front\6.png" />
+    <Resource Include="Resources\Images_Front\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Front\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
