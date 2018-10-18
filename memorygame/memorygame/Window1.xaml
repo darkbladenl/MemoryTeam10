@@ -1,0 +1,15 @@
+﻿<Window x:Class="memorygame.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:memorygame"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="52" Margin="10,31,0,0" TextWrapping="Wrap" Text="This game is sponsored by Alex Jones" VerticalAlignment="Top" Width="143"/>
+        <Button Content="Knop" HorizontalAlignment="Center" Height="50" Margin="269,156,320.333,0" VerticalAlignment="Top" Width="204" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="39,156,0,0" VerticalAlignment="Top" Width="165"/>
+
+    </Grid>
+</Window>
