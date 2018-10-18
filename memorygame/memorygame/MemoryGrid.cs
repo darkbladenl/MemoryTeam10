@@ -17,9 +17,11 @@ namespace memorygame
         private Grid grid;
         private const int cols = 4;
         private const int rows = 4;
-        //nieuwe instantie van lijst met kaartjes 1 t/m 8 x2
+        //lijst met kaartjes 1 t/m 8 x2
         private List<int> cards = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
-        private int score = 0;
+        //score
+        int score = 0;
+        
         //CONSTRUCTORS
         /// <summary>
         /// MemoryGrid bestaat uit een grid met rijen en kolommen, met daarin: Images en Labels
@@ -59,7 +61,7 @@ namespace memorygame
         private void AddLabel()
         {
             Label title = new Label();
-            title.Content = score;
+            title.Content = 0;
             title.FontFamily = new FontFamily("batman_font/#BatmanForeverAlternate");
             title.FontSize = 30;
             title.HorizontalAlignment = HorizontalAlignment.Center;
@@ -96,6 +98,7 @@ namespace memorygame
             card.Source = front;
             
         }
+
         /// <summary>
         /// plaatst images in een willekeurige volgorde
         /// </summary>
@@ -119,9 +122,9 @@ namespace memorygame
             }
             return images; 
         }
+        
 
-        
-       
-        
+
+
     }
 }
