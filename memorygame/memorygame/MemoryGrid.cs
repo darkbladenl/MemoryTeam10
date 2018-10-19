@@ -75,7 +75,7 @@ namespace memorygame
             scoreboard.HorizontalAlignment = HorizontalAlignment.Center;
             Grid.SetRow(scoreboard, 0);
             Grid.SetColumn(scoreboard, 5);
-            grid.Children.Add(scoreboard);                                                           
+            //grid.Children.Add(scoreboard);                                                           
         }
               
         /// <summary>
@@ -111,10 +111,10 @@ namespace memorygame
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
             openCardsIndex.Add(grid.Children.IndexOf(card));
-            System.Threading.Thread.Sleep(10);
+            //System.Threading.Thread.Sleep(10);
 
             openCards.Add(front.Height);
-            //seenCards.Add(card);
+            seenCards.Add(card);
             //openCardsIndex.Add(grid.Children.IndexOf(card));
             if (openCards.Count == 2)
             {                              
@@ -122,19 +122,25 @@ namespace memorygame
                 {
                     score++;
                     await PutTaskDelay();
-                    grid.Children.Remove(card);
-                                     
+                    grid.Children.RemoveAt(openCardsIndex.First());
+                    grid.Children.RemoveAt(openCardsIndex.Last());
+
+
                 }
                 if (!(openCards.First() == openCards.Last()))
                 {
                     score--;
                     await PutTaskDelay();
                     card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
-
+                    
 
                 }
                 openCards.RemoveRange(0, 2);
                 scoreboard.Content = score;               
+            }
+            if (openCardsIndex.Count == 2)
+            {
+                openCardsIndex.Clear();
             }
             
            

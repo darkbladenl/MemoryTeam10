@@ -20,7 +20,7 @@ namespace memorygame
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const int cols = 5;
+        private const int cols = 4;
         private const int rows = 4;
         MemoryGrid grid;
         
