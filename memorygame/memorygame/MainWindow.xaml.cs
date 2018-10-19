@@ -29,9 +29,10 @@ namespace memorygame
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, cols, rows);
-           
-           
+
 
         }
+        
+
     }   
 }

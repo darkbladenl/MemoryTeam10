@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
 
+
 namespace memorygame
 {
     public class MemoryGrid
@@ -17,10 +18,17 @@ namespace memorygame
         private Grid grid;
         private const int cols = 4;
         private const int rows = 4;
+        
         //lijst met kaartjes 1 t/m 8 x2
         private List<int> cards = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
-        //score
-        int score = 0;
+        //lijst met kaartjes die nu omgedraaid zijn
+        private List<double> openCards = new List<double>();
+        // lijst met kaartjes die al eens gezien zijn
+        private List<Image> seenCards = new List<Image>();
+        //private List<int> openCardsIndex = new List<int>();
+        int score = 0;//score
+        
+        Label scoreboard = new Label();//scorebord
         
         //CONSTRUCTORS
         /// <summary>
@@ -34,7 +42,7 @@ namespace memorygame
             this.grid = grid;
             InitializeGameGrid(cols, rows);
             AddCards();
-            AddLabel();
+            AddScoreboard();
             
         }         
 
@@ -58,17 +66,17 @@ namespace memorygame
         /// <summary>
         /// voegt een label toe
         /// </summary>
-        private void AddLabel()
-        {
-            Label title = new Label();
-            title.Content = 0;
-            title.FontFamily = new FontFamily("batman_font/#BatmanForeverAlternate");
-            title.FontSize = 30;
-            title.HorizontalAlignment = HorizontalAlignment.Center;
-
-            Grid.SetColumn(title, 5);            
-            grid.Children.Add(title);
+        private void AddScoreboard()
+        {    
+            scoreboard.Content = score;
+            scoreboard.FontFamily = new FontFamily("batman_font/#BatmanForeverAlternate");
+            scoreboard.FontSize = 30;
+            scoreboard.HorizontalAlignment = HorizontalAlignment.Center;
+            Grid.SetRow(scoreboard, 0);
+            Grid.SetColumn(scoreboard, 5);
+            grid.Children.Add(scoreboard);                                                           
         }
+              
         /// <summary>
         /// voegt images toe, klikbaar
         /// </summary>
@@ -90,14 +98,38 @@ namespace memorygame
                 }
             }
         }
-        
+
+       
         private void CardClick(object sender, MouseButtonEventArgs e)
-        {           
+        {
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
+
+            openCards.Add(front.Height);
+            //seenCards.Add(card);
+            //openCardsIndex.Add(grid.Children.IndexOf(card));
+            if (openCards.Count == 2)
+            {                              
+                if (openCards.First() == openCards.Last())
+                {
+                    score++;
+                    grid.Children.Remove(card);                        
+                }
+                if (!(openCards.First() == openCards.Last()))
+                {
+                    score--;
+                    
+                }
+                openCards.RemoveRange(0, 2);
+                scoreboard.Content = score;               
+            }
+            
+           
             
         }
+
+        
 
         /// <summary>
         /// plaatst images in een willekeurige volgorde
@@ -119,6 +151,7 @@ namespace memorygame
                 cards.RemoveAt(index);//het item wordt verwijdert uit de lijst zodat deze niet nog een keer gepakt kan worden
                 ImageSource source = new BitmapImage(new Uri("Resources/Images_Front/" + imageNR + ".png", UriKind.Relative));
                 images.Add(source);
+
             }
             return images; 
         }
