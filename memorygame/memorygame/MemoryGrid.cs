@@ -74,8 +74,8 @@ namespace memorygame
         {
             List<ImageSource> images = GetImagesList();
             for (int row = 0; row < rows; row++)
-            {
                 for(int column = 0; column < cols; column++)
+            {
                 {
                     Image backgroundImage = new Image();
                     backgroundImage.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
