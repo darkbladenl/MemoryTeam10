@@ -8,6 +8,18 @@
         Title="Memory" Height="500" Width="700" 
         ResizeMode="NoResize" Topmost="False" 
         WindowState="Normal" Icon="Resources/icon.png">
-    <Grid x:Name="GameGrid" Background="AliceBlue"/>
+    <Grid x:Name="Grid" Background="AliceBlue" Margin="10,0,20.667,8">
+        <Grid x:Name="GameGrid" Background="Aquamarine" Margin="0,0,181,44" Grid.ColumnSpan="5"/>
+        <Button Content="Save &amp; Quit" Grid.Column="4" HorizontalAlignment="Left" Margin="30.333,207,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <CheckBox Content="NuttelozeCheckbox" Grid.Column="4" HorizontalAlignment="Left" Margin="34.333,10,0,0" VerticalAlignment="Top" Height="15" Width="71"/>
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="30.333,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" Width="75"><Run Text="Highscores:"/><LineBreak/><Run Text="Youre mom"/><LineBreak/><Run Text="Yur mom"/><LineBreak/><Run Text="Show bobs"/><LineBreak/><Run/></TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
 
 </Window>
