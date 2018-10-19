@@ -25,7 +25,8 @@ namespace memorygame
         private List<double> openCards = new List<double>();
         // lijst met kaartjes die al eens gezien zijn
         private List<Image> seenCards = new List<Image>();
-        //private List<int> openCardsIndex = new List<int>();
+        private List<int> openCardsIndex = new List<int>();
+        private 
         int score = 0;//score
         
         Label scoreboard = new Label();//scorebord
@@ -80,7 +81,7 @@ namespace memorygame
         /// <summary>
         /// voegt images toe, klikbaar
         /// </summary>
-        private void AddCards()
+        public void AddCards()
         {
             List<ImageSource> images = GetImagesList();
             for (int row = 0; row < rows; row++)
@@ -98,13 +99,19 @@ namespace memorygame
                 }
             }
         }
+        async Task PutTaskDelay()
+        {
+            await Task.Delay(1000);
+        }
 
-       
-        private void CardClick(object sender, MouseButtonEventArgs e)
+
+        private async void CardClick(object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
+            openCardsIndex.Add(grid.Children.IndexOf(card));
+            System.Threading.Thread.Sleep(10);
 
             openCards.Add(front.Height);
             //seenCards.Add(card);
@@ -114,12 +121,17 @@ namespace memorygame
                 if (openCards.First() == openCards.Last())
                 {
                     score++;
-                    grid.Children.Remove(card);                        
+                    await PutTaskDelay();
+                    grid.Children.Remove(card);
+                                     
                 }
                 if (!(openCards.First() == openCards.Last()))
                 {
                     score--;
-                    
+                    await PutTaskDelay();
+                    card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+
+
                 }
                 openCards.RemoveRange(0, 2);
                 scoreboard.Content = score;               
