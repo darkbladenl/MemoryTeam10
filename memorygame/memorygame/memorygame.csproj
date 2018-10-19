@@ -122,8 +122,5 @@
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images_Rear\DC_Comics_logo2.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
