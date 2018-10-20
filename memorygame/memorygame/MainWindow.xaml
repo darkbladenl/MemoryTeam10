@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:memorygame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="GameGrid">
+        Title="Memory" Height="500" Width="700" 
+        ResizeMode="NoResize" Topmost="False" 
+        WindowState="Normal" Icon="Resources/icon.png">
+    <Grid x:Name="GameGrid" Background="AliceBlue">
         
     </Grid>
+
 </Window>
