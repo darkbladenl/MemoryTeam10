@@ -57,5 +57,4 @@ C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\mem
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.exe
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.pdb
-C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame_Content.g.cs
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
