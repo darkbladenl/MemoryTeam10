@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/nice%20meme.avi")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("game.ico")]
 
 

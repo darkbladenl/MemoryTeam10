@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Memory" Height="500" Width="700" 
         ResizeMode="NoResize" Topmost="False" 
-        WindowState="Normal" Icon="Resources/icon.png">
+        WindowState="Normal" Icon="Resources/icon.png" WindowStartupLocation="CenterScreen">
     
     <Grid x:Name="GameGrid" Background="AliceBlue">
         
