@@ -123,7 +123,8 @@
     <Folder Include="Resources\Fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images_Rear\DC_Comics_logo2.png" />
+    <Content Include="Resources\Nice Meme.avi" />
+    <None Include="Resources\Nice Meme.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

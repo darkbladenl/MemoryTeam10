@@ -8,6 +8,7 @@
         Title="Memory" Height="500" Width="700" 
         ResizeMode="NoResize" Topmost="False" 
         WindowState="Normal" Icon="Resources/icon.png">
+    
     <Grid x:Name="GameGrid" Background="AliceBlue">
         
     </Grid>
