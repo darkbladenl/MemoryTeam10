@@ -3,9 +3,11 @@
     "",
     "\\memorygame",
     "\\memorygame\\memorygame",
+    "\\memorygame\\memorygame\\bin",
+    "\\memorygame\\memorygame\\bin\\Debug",
     "\\memorygame\\memorygame\\Resources",
     "\\memorygame\\memorygame\\Resources\\Images_Front"
   ],
-  "SelectedNode": "\\memorygame\\memorygame\\Properties",
+  "SelectedNode": "\\memorygame\\memorygame\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": true
 }
