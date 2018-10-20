@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
-
+using System.Media;
 
 namespace memorygame
 {
@@ -26,26 +26,12 @@ namespace memorygame
         private List<Image> seenCards = new List<Image>();
         private List<int> openCardsIndex = new List<int>();
         private List<ImageSource> openCardsSources = new List<ImageSource>();
+        private List<Image> SolvedCards = new List<Image>();
         int score = 0;//score
-        int index = 0;
+        
         Label scoreboard = new Label();//scorebord
-        Label card0 = new Label();//kaartnummer
-        Label card1 = new Label();//kaartnummer
-        Label card2 = new Label();//kaartnummer
-        Label card3 = new Label();//kaartnummer
-        Label card4 = new Label();//kaartnummer
-        Label card5 = new Label();//kaartnummer
-        Label card6 = new Label();//kaartnummer
-        Label card7 = new Label();//kaartnummer
-        Label card8 = new Label();//kaartnummer
-        Label card9 = new Label();//kaartnummer
-        Label card10 = new Label();//kaartnummer
-        Label card11 = new Label();//kaartnummer
-        Label card12 = new Label();//kaartnummer
-        Label card13 = new Label();//kaartnummer
-        Label card14 = new Label();//kaartnummer
-        Label card15 = new Label();//kaartnummer
 
+        
         //CONSTRUCTORS
         /// <summary>
         /// MemoryGrid bestaat uit een grid met rijen en kolommen, met daarin: Images en Labels
@@ -59,7 +45,7 @@ namespace memorygame
             InitializeGameGrid(cols, rows);
             AddCards();
             AddScoreboard();
-           
+            
         }        
         //METHODEN
         /// <summary>
@@ -83,7 +69,7 @@ namespace memorygame
         /// </summary>
         private void AddScoreboard()
         {               
-            scoreboard.Content = score;            
+            scoreboard.Content = "Score: \n" + score;            
             scoreboard.FontSize = 30;
             scoreboard.HorizontalAlignment = HorizontalAlignment.Center;
             Grid.SetRow(scoreboard, 0);
@@ -125,36 +111,40 @@ namespace memorygame
             ImageSource front = (ImageSource)card.Tag;
             card.Source = front;
             
+            
             openCards.Add(front.Height);
             seenCards.Add(card);
             openCardsIndex.Add(grid.Children.IndexOf(card));
             openCardsSources.Add(card.Source);
+            
             if (openCards.Count == 2)
             {                              
                 if (openCards[0] == openCards[1])
                 {
                     score++;
                     await PutTaskDelay();
-                    //grid.Children.RemoveAt(openCardsIndex[0]);
-                    //card.Source = null;
-                    //grid.Children.Insert((openCardsIndex[0] - 1), test);
+                    SolvedCards.Add(card);
                 }
                 if (!(openCards[0] == openCards[1]))
                 {
                     score--;
                     await PutTaskDelay();
                     card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
-                    seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative)); 
-
-
+                    seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+                    
 
 
                 }
                 seenCards.RemoveRange(0, 2);
                 openCards.RemoveRange(0, 2);
-                scoreboard.Content = score;
+                scoreboard.Content = "Score: \n" + score;
                 openCardsIndex.RemoveRange(0, 2);
-            }           
+            }    
+            if(SolvedCards.Count == 8)
+            {
+                MessageBox.Show("WoW u A sMaRt Boii");
+                
+            }
         }
 
        

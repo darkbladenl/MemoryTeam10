@@ -122,5 +122,9 @@
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Nice Meme.avi" />
+    <None Include="Resources\Nice Meme.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
