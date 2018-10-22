@@ -9,7 +9,7 @@
         ResizeMode="NoResize" Topmost="False" 
         WindowState="Normal" Icon="Resources/icon.png" WindowStartupLocation="CenterScreen">
     
-    <Grid x:Name="GameGrid" Background="AliceBlue">
+    <Grid x:Name="GameGrid">
         
     </Grid>
 

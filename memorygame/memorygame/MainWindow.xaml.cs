@@ -32,8 +32,8 @@ namespace memorygame
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, cols, rows);
-            var notificationSound = new SoundPlayer(Properties.Resources.Nice_Meme);
-            notificationSound.PlaySync();
+            //var notificationSound = new SoundPlayer(Properties.Resources.Nice_Meme);
+            //notificationSound.PlaySync();
 
 
         }
