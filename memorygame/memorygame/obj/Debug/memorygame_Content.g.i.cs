@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images_rear/dc_comics_logo2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("game.ico")]
 
 

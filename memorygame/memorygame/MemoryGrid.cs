@@ -9,43 +9,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
 
-
 namespace memorygame
 {
     public class MemoryGrid
     {   
         //ATTRIBUTEN
+        // een grid
         private Grid grid;
         private const int cols = 4;
         private const int rows = 4;        
         //lijst met kaartjes 1 t/m 8 x2
         private List<int> cards = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
+        //lijst met kaartjes 1 t/m 8 x2 voor reset functie
+        private List<int> newCards = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
         //lijst met kaartjes die nu omgedraaid zijn
         private List<double> openCards = new List<double>();
-        // lijst met kaartjes die al eens gezien zijn
-        private List<Image> seenCards = new List<Image>();
-        private List<int> openCardsIndex = new List<int>();
-        private List<ImageSource> openCardsSources = new List<ImageSource>();
-        int score = 0;//score
-        int index = 0;
-        Label scoreboard = new Label();//scorebord
-        Label card0 = new Label();//kaartnummer
-        Label card1 = new Label();//kaartnummer
-        Label card2 = new Label();//kaartnummer
-        Label card3 = new Label();//kaartnummer
-        Label card4 = new Label();//kaartnummer
-        Label card5 = new Label();//kaartnummer
-        Label card6 = new Label();//kaartnummer
-        Label card7 = new Label();//kaartnummer
-        Label card8 = new Label();//kaartnummer
-        Label card9 = new Label();//kaartnummer
-        Label card10 = new Label();//kaartnummer
-        Label card11 = new Label();//kaartnummer
-        Label card12 = new Label();//kaartnummer
-        Label card13 = new Label();//kaartnummer
-        Label card14 = new Label();//kaartnummer
-        Label card15 = new Label();//kaartnummer
+        //lijst met kaartjes die al eens gezien zijn
+        private List<Image> seenCards = new List<Image>();                  
+        //lijst met kaartjes die opgelost zijn
+        private List<Image> SolvedCards = new List<Image>();
 
+        int score = 0;//score
+        
+        Label scoreboard = new Label();//scorebord
+        Button resetBtn = new Button();//resetknop
+        Button quitBtn = new Button();//sluitknop
         //CONSTRUCTORS
         /// <summary>
         /// MemoryGrid bestaat uit een grid met rijen en kolommen, met daarin: Images en Labels
@@ -59,9 +47,11 @@ namespace memorygame
             InitializeGameGrid(cols, rows);
             AddCards();
             AddScoreboard();
-           
+            AddResetBtn();
         }        
         //METHODEN
+
+        //SPEELBORD
         /// <summary>
         /// maakt een speelbord aan met aantal kolommen en rijen
         /// </summary>
@@ -78,19 +68,8 @@ namespace memorygame
                grid.ColumnDefinitions.Add(new ColumnDefinition());
             }
         }
-        /// <summary>
-        /// voegt een label toe
-        /// </summary>
-        private void AddScoreboard()
-        {               
-            scoreboard.Content = score;            
-            scoreboard.FontSize = 30;
-            scoreboard.HorizontalAlignment = HorizontalAlignment.Center;
-            Grid.SetRow(scoreboard, 0);
-            Grid.SetColumn(scoreboard, 5);
-            grid.Children.Add(scoreboard);                                                           
-        }
-              
+        
+        //KAARTEN ACHTERKANT
         /// <summary>
         /// voegt images toe, klikbaar
         /// </summary>
@@ -113,52 +92,8 @@ namespace memorygame
                 }
             }
         }
-        async Task PutTaskDelay()
-        {
-            await Task.Delay(1000);
-        }
-       
-        private async void CardClick(object sender, MouseButtonEventArgs e)
-        {
-            
-            Image card = (Image)sender;
-            ImageSource front = (ImageSource)card.Tag;
-            card.Source = front;
-            
-            openCards.Add(front.Height);
-            seenCards.Add(card);
-            openCardsIndex.Add(grid.Children.IndexOf(card));
-            openCardsSources.Add(card.Source);
-            if (openCards.Count == 2)
-            {                              
-                if (openCards[0] == openCards[1])
-                {
-                    score++;
-                    await PutTaskDelay();
-                    //grid.Children.RemoveAt(openCardsIndex[0]);
-                    //card.Source = null;
-                    //grid.Children.Insert((openCardsIndex[0] - 1), test);
-                }
-                if (!(openCards[0] == openCards[1]))
-                {
-                    score--;
-                    await PutTaskDelay();
-                    card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
-                    seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative)); 
 
-
-
-
-                }
-                seenCards.RemoveRange(0, 2);
-                openCards.RemoveRange(0, 2);
-                scoreboard.Content = score;
-                openCardsIndex.RemoveRange(0, 2);
-            }           
-        }
-
-       
-
+        //KAARTEN VOORKANT
         /// <summary>
         /// plaatst images in een willekeurige volgorde
         /// </summary>
@@ -166,7 +101,7 @@ namespace memorygame
         private List<ImageSource> GetImagesList()
         {
             List<ImageSource> images = new List<ImageSource>();
-            
+
             // rnd geeft een willekeurig getal terug
             Random rnd = new Random();
 
@@ -181,10 +116,108 @@ namespace memorygame
                 images.Add(source);
 
             }
-            return images; 
+            return images;
         }
 
-        
+        //MUISKLIK
+        /// <summary>
+        /// zorgt voor een delay
+        /// </summary>
+        /// <returns></returns>
+        async Task PutTaskDelay()
+        {
+            await Task.Delay(600);
+        }
+       
+        private async void CardClick(object sender, MouseButtonEventArgs e)
+        {
+            
+            Image card = (Image)sender;
+            ImageSource front = (ImageSource)card.Tag;
+            card.Source = front;
+            
+            
+            openCards.Add(front.Height);
+            seenCards.Add(card);
+            
+            
+            
+            if (openCards.Count == 2)
+            {                              
+                if (openCards[0] == openCards[1])
+                {
+                    score++;
+                    await PutTaskDelay();
+                    SolvedCards.Add(card);
+                }
+                if (!(openCards[0] == openCards[1]))
+                {
+                    score--;
+                    await PutTaskDelay();
+                    card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+                    seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+                    
 
+
+                }
+                seenCards.RemoveRange(0, 2);
+                openCards.RemoveRange(0, 2);
+                scoreboard.Content = "SCORE: \n" + score;
+                
+            }    
+            if(SolvedCards.Count == 8)
+            {
+                MessageBox.Show("WoW u A sMaRt Boii");
+                
+            }
+        }
+
+          
+        //SCOREBORD
+        /// <summary>
+        /// voegt een label toe
+        /// </summary>
+        private void AddScoreboard()
+        {
+            scoreboard.Content = "SCORE: \n" + score;
+            scoreboard.FontSize = 40;
+            scoreboard.Foreground = Brushes.White;
+            scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            scoreboard.HorizontalAlignment = HorizontalAlignment.Left;
+            Grid.SetRow(scoreboard, 0);
+            Grid.SetColumn(scoreboard, 5);
+            grid.Children.Add(scoreboard);
+        }
+
+        //RESETKNOP
+        private void AddResetBtn()
+        {
+            resetBtn.Content = "RESET";
+            resetBtn.FontSize = 30;
+            resetBtn.Foreground = Brushes.White;
+            resetBtn.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            resetBtn.Height = 50;
+            resetBtn.Click += ResetGame;
+            Grid.SetRow(resetBtn, 2);
+            Grid.SetColumn(resetBtn, 5);
+            grid.Children.Add(resetBtn);
+        }
+        private void ResetGame(object sender, RoutedEventArgs e)
+        {
+            grid.Children.Clear();
+
+            SolvedCards.Clear();
+            openCards.Clear();
+            seenCards.Clear();
+
+
+            cards.AddRange(newCards);
+            grid.Children.Add(scoreboard);
+            scoreboard.Content = "SCORE: \n" + 0;
+            score = 0;
+            grid.Children.Add(resetBtn);
+            AddCards();
+
+        }
     }
 }
