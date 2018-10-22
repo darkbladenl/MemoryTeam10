@@ -76,3 +76,7 @@ C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
 >>>>>>> bd5ba4bea5c50718a0dfa4c07f366dcc11856a64
+C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.cache
+C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.lref
+C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
+C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
