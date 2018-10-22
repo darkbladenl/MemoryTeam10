@@ -80,3 +80,10 @@ C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Me
 C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.lref
 C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
 C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
+C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
+C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.g.cs
+C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\App.g.cs
+C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.cache
+C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.lref
+C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
+C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
