@@ -8,9 +8,19 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace memorygame
 {
+    public static class ExtensionMethods
+    {
+        private static Action EmptyDelegate = delegate () { };
+
+        public static void Refresh(this UIElement uiElement)
+        {
+            uiElement.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
+        }
+    }
     public class MemoryGrid
     {   
         //ATTRIBUTEN
@@ -36,7 +46,7 @@ namespace memorygame
             AddCards();
             AddLabel();
             
-        }         
+        }
         //METHODEN
         /// <summary>
         /// maakt een speelbord aan met aantal kolommen en rijen
@@ -59,17 +69,15 @@ namespace memorygame
         /// </summary>
         public void AddLabel()
         {
-            while (true)
-            {
-                Label title = new Label();
-                title.Content = score;
-                title.FontFamily = new FontFamily("batman_font/#BatmanForeverAlternate");
-                title.FontSize = 30;
-                title.HorizontalAlignment = HorizontalAlignment.Center;
 
-                Grid.SetColumn(title, 5);
-                grid.Children.Add(title);
-            }
+            Label title = new Label();
+            title.Content = score;
+            title.FontFamily = new FontFamily("batman_font/#BatmanForeverAlternate");
+            title.FontSize = 30;
+            title.HorizontalAlignment = HorizontalAlignment.Center;
+
+            Grid.SetColumn(title, 5);            
+            grid.Children.Add(title);
         }
         /// <summary>
         /// voegt images toe, klikbaar
