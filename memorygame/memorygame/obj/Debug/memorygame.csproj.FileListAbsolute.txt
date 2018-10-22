@@ -89,3 +89,5 @@ C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj
 C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
 C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.exe
 C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.pdb
+C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Window1.g.cs
+C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Window1.baml

@@ -5,11 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:memorygame"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="544.016" Width="885.744">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="52" Margin="10,31,0,0" TextWrapping="Wrap" Text="This game is sponsored by Alex Jones" VerticalAlignment="Top" Width="143"/>
-        <Button Content="Knop" HorizontalAlignment="Center" Height="50" Margin="269,156,320.333,0" VerticalAlignment="Top" Width="204" Click="Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="39,156,0,0" VerticalAlignment="Top" Width="165"/>
+        <Image x:Name="background" Source="Resources/achtergrond-1.jpg" Stretch="UniformToFill" IsEnabled="True" Margin="0,0,0.333,-0.333"/>
+        <Button x:Name="BtnSpelen" Content="Spelen!" HorizontalAlignment="Center" Height="69" Margin="306,436,291.333,0" VerticalAlignment="Top" Width="282" Click="Button_Click" FontFamily="Ravie" FontSize="36" IsEnabled="False">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="button" Content="Afsluiten" HorizontalAlignment="Left" Height="45" Margin="752,460,0,0" VerticalAlignment="Top" Width="117" Click="button_Click_1" FontFamily="Showcard Gothic" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="label" Content="Memorygame" HorizontalAlignment="Left" Height="109" Margin="129,49,0,0" VerticalAlignment="Top" Width="655" FontFamily="Ravie" FontSize="69" Foreground="White" FontWeight="Bold" TextOptions.TextHintingMode="Fixed">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <TextBox x:Name="Naambox" HorizontalAlignment="Left" Height="51" Margin="306,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Label x:Name="label1" Content="Kies een gebruikersnaam!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="251,300,0,0" Width="418" FontFamily="Tekton Pro" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.534"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="Timer" Content="Timer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="500,223,0,0" Height="48" FontFamily="Ravie" FontSize="22" Click="Timer_Click" Background="#FFDDDDDD">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="Scores" Content="Scores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="281,223,0,0" Height="48" FontFamily="Ravie" FontSize="22" Click="Scores_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="label2" Content="Kies een spelmodus!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="294,153,0,0" Width="418" FontFamily="Tekton Pro" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.534"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+
 
     </Grid>
 </Window>
