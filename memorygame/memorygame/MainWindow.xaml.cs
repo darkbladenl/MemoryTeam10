@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,14 +25,19 @@ namespace memorygame
         private const int rows = 4;
         MemoryGrid grid;
         
+        
+        
 
         public MainWindow()
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, cols, rows);
-            
+            //var notificationSound = new SoundPlayer(Properties.Resources.Nice_Meme);
+            //notificationSound.PlaySync();
 
 
         }
+        
+
     }   
 }
