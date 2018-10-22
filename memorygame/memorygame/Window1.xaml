@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:memorygame"
         mc:Ignorable="d"
-        Title="Window1" Height="544.016" Width="885.744">
+        Title="Window1" Height="552.016" Width="889.744">
     <Grid>
         <Image x:Name="background" Source="Resources/achtergrond-1.jpg" Stretch="UniformToFill" IsEnabled="True" Margin="0,0,0.333,-0.333"/>
         <Button x:Name="BtnSpelen" Content="Spelen!" HorizontalAlignment="Center" Height="69" Margin="306,436,291.333,0" VerticalAlignment="Top" Width="282" Click="Button_Click" FontFamily="Ravie" FontSize="36" IsEnabled="False">
