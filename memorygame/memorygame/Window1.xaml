@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="52" Margin="10,31,0,0" TextWrapping="Wrap" Text="This game is sponsored by Alex Jones" VerticalAlignment="Top" Width="143"/>
-        <Button Content="Knop" HorizontalAlignment="Center" Height="50" Margin="269,156,320.333,0" VerticalAlignment="Top" Width="204" Click="Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="39,156,0,0" VerticalAlignment="Top" Width="165"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="52" Margin="10,31,0,0" TextWrapping="Wrap" Text="This game is sponsored by Alex Jones" VerticalAlignment="Top" Width="143" Grid.ColumnSpan="2"/>
+        <Button Content="Knop" HorizontalAlignment="Center" Height="50" Margin="269,156,320.333,0" VerticalAlignment="Top" Width="204" Click="Button_Click" Grid.ColumnSpan="2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="39,156,0,0" VerticalAlignment="Top" Width="165" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
