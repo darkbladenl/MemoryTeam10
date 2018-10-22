@@ -64,8 +64,5 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-
-
-
     </Grid>
 </Window>

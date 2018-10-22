@@ -148,6 +148,7 @@ namespace memorygame {
             case 2:
             this.BtnSpelen = ((System.Windows.Controls.Button)(target));
             
+
             #line 11 "..\..\Window1.xaml"
             this.BtnSpelen.Click += new System.Windows.RoutedEventHandler(this.Button_Click);
             
