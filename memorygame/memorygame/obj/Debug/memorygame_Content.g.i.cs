@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images_front/flash_logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("game.ico")]
 
 
