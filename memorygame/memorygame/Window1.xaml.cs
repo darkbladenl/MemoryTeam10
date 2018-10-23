@@ -24,6 +24,8 @@ namespace memorygame
             InitializeComponent();
         }
         public string Gamemode;
+        public string Thema;
+        public string Naam;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -40,9 +42,9 @@ namespace memorygame
 
         private void Naambox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string Inhoud = Naambox.Text;
+            Naam = Naambox.Text.ToString();
 
-            if (Inhoud != "") 
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
             {
                 BtnSpelen.IsEnabled = true;
             }
@@ -54,6 +56,10 @@ namespace memorygame
             Scores.Background = Scores.Background == Brushes.Red ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.Red;
             Timer.Background = Timer.Background == Brushes.LightGray ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.LightGray;
 
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
+            {
+                BtnSpelen.IsEnabled = true;
+            }
         }
 
         private void Timer_Click(object sender, RoutedEventArgs e)
@@ -62,6 +68,23 @@ namespace memorygame
             Timer.Background = Timer.Background == Brushes.Red ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.Red;
             Scores.Background = Scores.Background == Brushes.LightGray ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.LightGray;
 
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
+            {
+                BtnSpelen.IsEnabled = true;
+            }
+
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Thema = ComboBox.Text.ToString();
+            ///label1.Content = Thema;
+
+
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
+            {
+                BtnSpelen.IsEnabled = true;
+            }
         }
     }
 }
