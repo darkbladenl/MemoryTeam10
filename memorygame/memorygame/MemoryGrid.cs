@@ -196,7 +196,7 @@ namespace memorygame
                     MessageBox.Show("Player2 WIN");
                 }
 
-                else
+                if (score == score1)
                 {
                     MessageBox.Show("TIE");
                 }
