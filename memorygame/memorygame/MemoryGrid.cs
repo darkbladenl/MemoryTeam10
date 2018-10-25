@@ -30,8 +30,10 @@ namespace memorygame
         private List<Image> SolvedCards = new List<Image>();
 
         int score = 0;//score
-        
+        int score1 = 0;
+
         Label scoreboard = new Label();//scorebord
+        Label scoreboard1 = new Label();
         Button resetBtn = new Button();//resetknop
         Button quitBtn = new Button();//sluitknop
         //CONSTRUCTORS
@@ -47,6 +49,7 @@ namespace memorygame
             InitializeGameGrid(cols, rows);
             AddCards();
             AddScoreboard();
+            AddScoreboard1();
             AddResetBtn();
         }        
         //METHODEN
@@ -108,9 +111,9 @@ namespace memorygame
             for (int i = 0; i < 16; i++)
             {
                 //index is gelijk aan rnd{willekeurig getal} die Next{niet negatief} is 
-                //en lager dan (cardNR.count){hoeveel items erin de lijst staan
+                //en lager dan (cards.count){hoeveel items erin de lijst staan}
                 int index = rnd.Next(cards.Count);
-                int imageNR = cards[index];//de ImageNR wordt cardNR[index] een random item{een getal} uit de lijst cardNR
+                int imageNR = cards[index];//de ImageNR wordt cards[index] een random item{een getal} uit de lijst cards
                 cards.RemoveAt(index);//het item wordt verwijdert uit de lijst zodat deze niet nog een keer gepakt kan worden
                 ImageSource source = new BitmapImage(new Uri("Resources/Images_Front/" + imageNR + ".png", UriKind.Relative));
                 images.Add(source);
@@ -145,29 +148,58 @@ namespace memorygame
             if (openCards.Count == 2)
             {                              
                 if (openCards[0] == openCards[1])
-                {
-                    score++;
-                    await PutTaskDelay();
+                {                                       
                     SolvedCards.Add(card);
+
+                    if (scoreboard1.Background == null)
+                    {
+                        score = score + 100;
+                        scoreboard.Content = "Player1: \n" + score;
+                    }
+                    else
+                    {
+                        score1 = score1 + 100;
+                        scoreboard1.Content = "Player2: \n" + score1;
+                    }
                 }
                 if (!(openCards[0] == openCards[1]))
-                {
-                    score--;
+                {                    
                     await PutTaskDelay();
                     card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     
-
-
+                    if (scoreboard1.Background == null)
+                    {
+                        scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+                        scoreboard.Background = null;
+                        
+                    }
+                    else
+                    {
+                        scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+                        scoreboard1.Background = null;
+                        
+                    }                    
                 }
                 seenCards.RemoveRange(0, 2);
-                openCards.RemoveRange(0, 2);
-                scoreboard.Content = "SCORE: \n" + score;
-                
+                openCards.RemoveRange(0, 2);                                
             }    
             if(SolvedCards.Count == 8)
             {
-                MessageBox.Show("WoW u A sMaRt Boii");
+                if (score > score1)
+                {
+                    MessageBox.Show("Player1 WIN");
+                }
+                
+                if (score < score1)
+                {
+                    MessageBox.Show("Player2 WIN");
+                }
+
+                else
+                {
+                    MessageBox.Show("TIE");
+                }
                 
             }
         }
@@ -179,14 +211,25 @@ namespace memorygame
         /// </summary>
         private void AddScoreboard()
         {
-            scoreboard.Content = "SCORE: \n" + score;
+            scoreboard.Content = "Player1: \n" + score;
             scoreboard.FontSize = 40;
-            scoreboard.Foreground = Brushes.White;
             scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
             scoreboard.HorizontalAlignment = HorizontalAlignment.Left;
             Grid.SetRow(scoreboard, 0);
             Grid.SetColumn(scoreboard, 5);
             grid.Children.Add(scoreboard);
+        }
+
+        //SCOREBORD1
+        private void AddScoreboard1()
+        {
+            scoreboard1.Content = "Player2: \n" + score;
+            scoreboard1.FontSize = 40;
+            scoreboard1.Background = null;
+            scoreboard1.HorizontalAlignment = HorizontalAlignment.Left;
+            Grid.SetRow(scoreboard1, 1);
+            Grid.SetColumn(scoreboard1, 5);
+            grid.Children.Add(scoreboard1);
         }
 
         //RESETKNOP
@@ -213,8 +256,13 @@ namespace memorygame
 
             cards.AddRange(newCards);
             grid.Children.Add(scoreboard);
-            scoreboard.Content = "SCORE: \n" + 0;
+            grid.Children.Add(scoreboard1);
+            scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            scoreboard1.Background = null;
             score = 0;
+            score1 = 0;
+            scoreboard.Content = "Player1: \n" + score;
+            scoreboard1.Content = "Player2: \n" + score1;
             grid.Children.Add(resetBtn);
             AddCards();
 
