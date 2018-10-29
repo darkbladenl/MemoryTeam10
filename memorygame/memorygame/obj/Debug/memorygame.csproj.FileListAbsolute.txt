@@ -93,3 +93,4 @@ C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\Window1.g.cs
+C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\Window1.baml
