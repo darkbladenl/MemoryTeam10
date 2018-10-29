@@ -9,6 +9,10 @@
     "\\memorygame\\memorygame\\Resources",
     "\\memorygame\\memorygame\\Resources\\Images_Front"
   ],
-  "SelectedNode": "\\memorygame\\memorygame\\MemoryGrid.cs",
+<<<<<<< HEAD
+  "SelectedNode": "\\memorygame\\memorygame\\MainWindow.xaml.cs",
+=======
+  "SelectedNode": "\\memorygame\\memorygame\\MainWindow.xaml",
+>>>>>>> bd5ba4bea5c50718a0dfa4c07f366dcc11856a64
   "PreviewInSolutionExplorer": true
 }
