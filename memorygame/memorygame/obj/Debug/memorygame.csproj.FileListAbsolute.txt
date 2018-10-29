@@ -28,38 +28,13 @@ C:\Users\darkblade\Downloads\School\Project Memory\Project\MemoryTeam10\memoryga
 C:\Users\darkblade\Downloads\School\Project Memory\Project\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
 C:\Users\darkblade\Downloads\School\Project Memory\Project\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.exe
 C:\Users\darkblade\Downloads\School\Project Memory\Project\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.pdb
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.exe.config
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.exe
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.pdb
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.g.cs
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\App.g.cs
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame_MarkupCompile.cache
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame_MarkupCompile.lref
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.baml
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.g.resources
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.Properties.Resources.resources
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.GenerateResource.cache
 C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.exe
-C:\Users\darkblade\Source\Repos\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.pdb
-<<<<<<< HEAD
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.exe.config
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.exe
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.pdb
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.g.cs
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\App.g.cs
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame_MarkupCompile.cache
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame_MarkupCompile.lref
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.baml
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.g.resources
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.Properties.Resources.resources
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.GenerateResource.cache
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.exe
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.pdb
-=======
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.g.cs
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\App.g.cs
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.baml
@@ -75,15 +50,26 @@ C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.g.resources
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
 C:\Users\darkblade\source\repos\melonicedtea\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
->>>>>>> bd5ba4bea5c50718a0dfa4c07f366dcc11856a64
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.cache
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.lref
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
-C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
-C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
-C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.g.cs
-C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\App.g.cs
-C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.cache
-C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.lref
-C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
-C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\Memory.exe.config
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\Memory.exe
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\Memory.pdb
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.g.cs
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\App.g.cs
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.cache
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.lref
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.baml
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.g.resources
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.Properties.Resources.resources
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.GenerateResource.cache
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
+C:\Users\darkblade\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\bin\Debug\Memory.exe.config
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\bin\Debug\Memory.exe
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\bin\Debug\Memory.pdb
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.cache
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory_MarkupCompile.lref
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.g.resources
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.exe
+C:\Users\darkblade\source\repos\MemoryTeam10\memorygame\memorygame\obj\Debug\Memory.pdb
