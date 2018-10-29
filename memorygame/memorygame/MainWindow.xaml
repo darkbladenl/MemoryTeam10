@@ -8,29 +8,16 @@
         Title="Memory" Height="500" Width="700" 
         ResizeMode="NoResize" Topmost="False" 
         WindowState="Normal" Icon="Resources/icon.png">
-    <Grid x:Name="Grid"  Margin="10,0,20.667,8">
-        <Grid.RowDefinitions>
+    <Grid x:Name="GameGrid"  Margin="10,0,20.667,8">
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="273*"/>
             <RowDefinition Height="191*"/>
         </Grid.RowDefinitions>
-        <Grid.Background>
-            <ImageBrush ImageSource="spoder.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
+        
 
         <Grid x:Name="GameGrid" Margin="0,0,181,44" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
-        <Button Content="Save &amp; Quit" Grid.Column="4" HorizontalAlignment="Left" Margin="30.333,207,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
-        <CheckBox Content="NuttelozeCheckbox" Grid.Column="4" HorizontalAlignment="Left" Margin="34.333,10,0,0" VerticalAlignment="Top" Height="15" Width="71"/>
-        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="30.333,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" Width="75"><Run Text="Highscores:"/><LineBreak/><Run Text="Youre mom"/><LineBreak/><Run Text="Yur mom"/><LineBreak/><Run Text="Show bobs"/><LineBreak/><Run/></TextBlock>
         <Grid Grid.ColumnSpan="2" Margin="0,0,120.333,0" Grid.RowSpan="2" />
         <Grid Grid.ColumnSpan="2" Margin="0,0,120.333,0" Grid.RowSpan="2">
-            <Image x:Name="spoder" Source="spoder.jpg" Margin="-18,10,-540.333,-50" Opacity="0.45" Stretch="UniformToFill" IsEnabled="True" OpacityMask="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" ClipToBounds="True">
-                <Image.Effect>
-                    <BlurEffect/>
-                </Image.Effect>
-
-
-
-            </Image>
         </Grid>
 
         <Grid.ColumnDefinitions>
@@ -38,8 +25,8 @@
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="60*"/>
-        </Grid.ColumnDefinitions>
+            
+        </Grid.ColumnDefinitions>-->
 
     </Grid>
 
