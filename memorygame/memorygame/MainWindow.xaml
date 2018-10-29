@@ -14,7 +14,7 @@
             <RowDefinition Height="191*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/spoder.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="spoder.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <Grid x:Name="GameGrid" Margin="0,0,181,44" Grid.ColumnSpan="5" Grid.RowSpan="2"/>
