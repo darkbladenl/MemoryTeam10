@@ -27,12 +27,12 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <TextBox x:Name="Naambox" HorizontalAlignment="Left" Height="51" Margin="370,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
+        <TextBox x:Name="Naambox" HorizontalAlignment="Left" Height="51" Margin="213,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label x:Name="label2" Content="Kies een gebruikersnaam!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,336,0,0" Width="450" FontFamily="Tekton" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="label2" Content="Kies uw gebruikersnamen!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,336,0,0" Width="450" FontFamily="Tekton" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
@@ -89,5 +89,10 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+        <TextBox x:Name="Naambox1" HorizontalAlignment="Left" Height="51" Margin="526,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
     </Grid>
 </Window>
