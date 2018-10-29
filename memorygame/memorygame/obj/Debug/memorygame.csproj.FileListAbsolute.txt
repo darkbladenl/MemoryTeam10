@@ -63,7 +63,6 @@ C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.pdb
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.exe
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\bin\Debug\memorygame.pdb
-C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojResolveAssemblyReference.cache
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\MainWindow.g.cs
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\App.g.cs
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame_MarkupCompile.cache
@@ -91,3 +90,5 @@ C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj
 C:\Users\Joey_\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.pdb
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Window1.g.cs
 C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\Window1.baml
+C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csprojAssemblyReference.cache
+C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\memorygame.csproj.CoreCompileInputs.cache
