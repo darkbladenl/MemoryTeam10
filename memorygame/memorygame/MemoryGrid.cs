@@ -28,6 +28,8 @@ namespace memorygame
         private List<Image> seenCards = new List<Image>();
         //lijst met kaartjes die opgelost zijn
         private List<Image> SolvedCards = new List<Image>();
+        private List<int> clickRow = new List<int>();
+        private List<int> clickColumn = new List<int>();
 
         int score = 0;//score
         int score1 = 0;
@@ -135,71 +137,97 @@ namespace memorygame
         private async void CardClick(object sender, MouseButtonEventArgs e)
         {
 
-            Image card = (Image)sender;
-            ImageSource front = (ImageSource)card.Tag;
-            card.Source = front;
-
-
-            openCards.Add(front.Height);
-            seenCards.Add(card);
-
-
-
-            if (openCards.Count == 2)
+            var element = (UIElement)e.Source;
+            int row = Grid.GetRow(element);
+            int column = Grid.GetColumn(element);
+            bool doubleClickColumn = clickColumn.Contains(column);
+            bool doubleClickRow = clickRow.Contains(row);
+            if (doubleClickRow == true && doubleClickColumn == true)
             {
-                if (openCards[0] == openCards[1])
+
+                if (openCards.Count == 2)
                 {
-                    SolvedCards.Add(card);
-
-                    if (scoreboard1.Background == null)
-                    {
-                        score = score + 100;
-                        scoreboard.Content = "Player1: \n" + score;
-                    }
-                    else
-                    {
-                        score1 = score1 + 100;
-                        scoreboard1.Content = "Player2: \n" + score1;
-                    }
+                    clickRow.Clear();
+                    clickColumn.Clear();
                 }
-                if (!(openCards[0] == openCards[1]))
-                {
-                    await PutTaskDelay();
-                    card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
-                    seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+                return;
 
-                    if (scoreboard1.Background == null)
-                    {
-                        scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
-                        scoreboard.Background = null;
-
-                    }
-                    else
-                    {
-                        scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
-                        scoreboard1.Background = null;
-
-                    }
-                }
-                seenCards.RemoveRange(0, 2);
-                openCards.RemoveRange(0, 2);
             }
-            if (SolvedCards.Count == 8)
+            else
             {
-                if (score > score1)
+                Image card = (Image)sender;
+                ImageSource front = (ImageSource)card.Tag;
+                card.Source = front;
+
+
+                clickRow.Add(row);
+                clickColumn.Add(column);
+                openCards.Add(front.Height);
+                seenCards.Add(card);
+
+
+
+                if (openCards.Count == 2)
                 {
-                    MessageBox.Show("Player1 WIN");
+                    clickRow.Clear();
+                    clickColumn.Clear();
+                    if (openCards[0] == openCards[1])
+                    {
+                        SolvedCards.Add(card);
+
+                        if (scoreboard1.Background == null)
+                        {
+                            score = score + 100;
+                            scoreboard.Content = "Player1: \n" + score;
+                        }
+                        else
+                        {
+                            score1 = score1 + 100;
+                            scoreboard1.Content = "Player2: \n" + score1;
+                        }
+                    }
+
+                    if (!(openCards[0] == openCards[1]))
+                    {
+                        await PutTaskDelay();
+                        card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+                        seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+
+
+                        if (scoreboard1.Background == null)
+                        {
+                            scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+                            scoreboard.Background = null;
+
+                        }
+                        else
+                        {
+                            scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+                            scoreboard1.Background = null;
+
+                        }
+                    }
+                    seenCards.RemoveRange(0, 2);
+                    openCards.RemoveRange(0, 2);
+                }
+                if (SolvedCards.Count == 8)
+                {
+                    if (score > score1)
+                    {
+                        MessageBox.Show("Player1 WIN");
+                    }
+
+                    if (score < score1)
+                    {
+                        MessageBox.Show("Player2 WIN");
+                    }
+
+                    if (score == score1)
+                    {
+                        MessageBox.Show("TIE");
+                    }
                 }
 
-                if (score < score1)
-                {
-                    MessageBox.Show("Player2 WIN");
-                }
-
-                if (score == score1)
-                {
-                    MessageBox.Show("TIE");
-                }
 
             }
         }
