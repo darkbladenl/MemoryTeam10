@@ -94,5 +94,36 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
+        <Label x:Name="label4" Content="Gemaakt door:" HorizontalAlignment="Left" Height="36" Margin="834,10,-30.333,0" VerticalAlignment="Top" Width="233" FontFamily="Cambria" FontSize="25" FontWeight="Bold" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="IHtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,51,0,0" Text="Ido Hiemstra" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JHtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,80,0,0" Text="Joey Hovinga" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="RtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,107,0,0" Text="Reindert Visser" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="MtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,135,0,0" Text="Micky Cheng" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JGtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,163,0,0" Text="Joop de Graaf" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <Button Opacity="0" x:Name="button1" Content="" HorizontalAlignment="Left" Height="28" Margin="834,79,0,0" VerticalAlignment="Top" Width="127" Click="button1_Click"/>
     </Grid>
 </Window>

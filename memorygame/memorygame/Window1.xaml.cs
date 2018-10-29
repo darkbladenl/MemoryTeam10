@@ -95,5 +95,12 @@ namespace memorygame
                 BtnSpelen.IsEnabled = true;
             }
         }
+
+      
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            JHtextBlock.Text = "🅱️oey Hovinga";
+        }
     }
 }
