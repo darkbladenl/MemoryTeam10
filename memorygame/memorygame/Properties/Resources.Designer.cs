@@ -61,11 +61,13 @@ namespace memorygame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Nice_Meme {
+        internal static System.Drawing.Bitmap achtergrond_1 {
             get {
-                return ResourceManager.GetStream("Nice_Meme", resourceCulture);
+                object obj = ResourceManager.GetObject("achtergrond_1", resourceCulture);
+
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
