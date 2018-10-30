@@ -142,6 +142,7 @@ namespace memorygame
             int column = Grid.GetColumn(element);
             bool doubleClickColumn = clickColumn.Contains(column);
             bool doubleClickRow = clickRow.Contains(row);
+            bool disableSolved = SolvedCards.Contains(sender);
             if (doubleClickRow == true && doubleClickColumn == true)
             {
 
@@ -150,6 +151,10 @@ namespace memorygame
                     clickRow.Clear();
                     clickColumn.Clear();
                 }
+                return;
+            }
+            else if (disableSolved == true)
+            {
                 return;
 
             }
@@ -173,7 +178,8 @@ namespace memorygame
                     clickColumn.Clear();
                     if (openCards[0] == openCards[1])
                     {
-                        SolvedCards.Add(card);
+                        SolvedCards.Add(seenCards[0]);
+                        SolvedCards.Add(seenCards[1]);
 
                         if (scoreboard1.Background == null)
                         {
@@ -210,7 +216,7 @@ namespace memorygame
                     seenCards.RemoveRange(0, 2);
                     openCards.RemoveRange(0, 2);
                 }
-                if (SolvedCards.Count == 8)
+                if (SolvedCards.Count == 16)
                 {
                     if (score > score1)
                     {
