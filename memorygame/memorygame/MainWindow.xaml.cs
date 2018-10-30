@@ -54,13 +54,11 @@ namespace memorygame
         {
             string score = grid.GetScore() + Environment.NewLine;
             string score1 = grid.GetScore1() + Environment.NewLine;
-            string scoreBG = grid.GetScoreboardBG() + Environment.NewLine;
-            string score1BG = grid.GetScoreboard1BG() + Environment.NewLine;
+            string turnCount = grid.GetTurnCount() + Environment.NewLine;
 
             File.WriteAllText("memory.sav", score);
             File.AppendAllText("memory.sav", score1);
-            File.AppendAllText("memory.sav", scoreBG);
-            File.AppendAllText("memory.sav", score1BG);
+            File.AppendAllText("memory.sav", turnCount);
         }
 
     }   

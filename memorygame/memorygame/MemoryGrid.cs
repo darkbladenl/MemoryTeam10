@@ -36,7 +36,6 @@ namespace memorygame
         //int score = 0;
         //int score1 = 0;
         private int turnCount = Convert.ToInt32(File.ReadLines("memory.sav").Skip(2).Take(1).First());
-        private SolidColorBrush scoreboard1BG = (SolidColorBrush)new BrushConverter().ConvertFromString(File.ReadLines("memory.sav").Skip(3).Take(1).First());
         //SolidColorBrush scoreboard1BG = Brushes.White;
 
         private Label scoreboard = new Label();//scorebord
@@ -176,7 +175,7 @@ namespace memorygame
                     card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     
-                    if (turnCount % 2 == 1)
+                    if (turnCount % 2 == 0)
                     {
                         scoreboard1.Background = Brushes.Blue; 
                         scoreboard.Background = Brushes.White;
@@ -221,7 +220,14 @@ namespace memorygame
         {
             scoreboard.Content = "Player1: \n" + score;
             scoreboard.FontSize = 40;
-            scoreboard.Background = scoreboardBG;
+            if (turnCount % 2 == 0)
+            {
+                scoreboard.Background = Brushes.White;
+            }
+            else
+            {
+                scoreboard.Background = Brushes.Blue;
+            }
             scoreboard.HorizontalAlignment = HorizontalAlignment.Left;
             Grid.SetRow(scoreboard, 0);
             Grid.SetColumn(scoreboard, 5);
@@ -233,8 +239,15 @@ namespace memorygame
         {
             scoreboard1.Content = "Player2: \n" + score1;
             scoreboard1.FontSize = 40;
-            scoreboard1.Background = scoreboard1BG;
-            scoreboard1.HorizontalAlignment = HorizontalAlignment.Left;
+            if (turnCount % 2 == 0)
+            {
+                scoreboard1.Background = Brushes.Blue;
+            }
+            else
+            {
+                scoreboard1.Background = Brushes.White;
+            }
+                scoreboard1.HorizontalAlignment = HorizontalAlignment.Left;
             Grid.SetRow(scoreboard1, 1);
             Grid.SetColumn(scoreboard1, 5);
             grid.Children.Add(scoreboard1);
@@ -260,6 +273,7 @@ namespace memorygame
             solvedCards.Clear();
             openCards.Clear();
             seenCards.Clear();
+            turnCount = 1;
 
 
             cards.AddRange(newCards);
@@ -286,14 +300,10 @@ namespace memorygame
             return score1;
         }
 
-        public Brush GetScoreboardBG()
+        public int GetTurnCount()
         {
-            return scoreboard.Background;
+            return turnCount;
         }
 
-        public Brush GetScoreboard1BG()
-        {
-            return scoreboard1.Background;
-        }
     }
 }
