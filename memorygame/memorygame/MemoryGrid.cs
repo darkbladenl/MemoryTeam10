@@ -15,10 +15,11 @@ namespace memorygame
     public class MemoryGrid
     {
         //ATTRIBUTEN
-        // een grid
-        private Grid grid;
+
+        private Grid grid;// een grid
         private const int cols = 4;
         private const int rows = 4;
+
         //lijst met kaartjes 1 t/m 8 x2
         private List<int> cards = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8 };
         //lijst met kaartjes 1 t/m 8 x2 voor reset functie
@@ -29,20 +30,18 @@ namespace memorygame
         private List<Image> seenCards = new List<Image>();
         //lijst met kaartjes die opgelost zijn
         private List<Image> SolvedCards = new List<Image>();
+
         private List<int> clickRow = new List<int>();
         private List<int> clickColumn = new List<int>();
-        //new int turnCount = 1;
 
-        private int score = Convert.ToInt32(File.ReadLines("memory.sav").Skip(0).Take(1).First());
-        private int score1 = Convert.ToInt32(File.ReadLines("memory.sav").Skip(1).Take(1).First());
+        private int score = Convert.ToInt32(File.ReadLines("memory.sav").Skip(0).Take(1).First());//score speler 1
+        private int score1 = Convert.ToInt32(File.ReadLines("memory.sav").Skip(1).Take(1).First());//score speler 2
 
-        //int score = 0;//score
-        //int score1 = 0;
         private int turnCount = Convert.ToInt32(File.ReadLines("memory.sav").Skip(2).Take(1).First());
 
-        Label scoreboard = new Label();//scorebord
-        Label scoreboard1 = new Label();
-        Button resetBtn = new Button();//resetknop
+        private Label scoreboard = new Label();//scorebord speler 1
+        private Label scoreboard1 = new Label();//scorebord speler 2
+        private Button resetBtn = new Button();//resetknop
         
         //CONSTRUCTORS
         /// <summary>
@@ -139,7 +138,13 @@ namespace memorygame
         {
             await Task.Delay(600);
         }
-
+        /// <summary>
+        /// Wanneer erop een kaart gedrukt wordt zal deze omdraaien.
+        /// En wanneer er twee zijn omgedraaid zullen deze worden gecheckt, 
+        /// vervolgens zal er een passende actie voorkomen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void CardClick(object sender, MouseButtonEventArgs e)
         {
 
@@ -254,7 +259,7 @@ namespace memorygame
 
         //SCOREBORD
         /// <summary>
-        /// voegt een label toe
+        /// voegt een scorebord toe voor speler 1
         /// </summary>
         private void AddScoreboard()
         {
@@ -276,6 +281,9 @@ namespace memorygame
         }
 
         //SCOREBORD1
+        /// <summary>
+        /// Voegt een scorebord toe voor speler 2
+        /// </summary>
         private void AddScoreboard1()
         {
             scoreboard1.Content = "Player2: \n" + score1;
@@ -297,6 +305,9 @@ namespace memorygame
         }
 
         //RESETKNOP
+        /// <summary>
+        /// Voegt een resetknop toe
+        /// </summary>
         private void AddResetBtn()
         {
             resetBtn.Content = "RESET";
@@ -310,6 +321,11 @@ namespace memorygame
             grid.Children.Add(resetBtn);
 
         }
+        /// <summary>
+        /// Reset de game 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ResetGame(object sender, RoutedEventArgs e)
         {
             grid.Children.Clear();
@@ -334,15 +350,29 @@ namespace memorygame
             AddCards();
 
         }
+
+        //GET METHODS
+        /// <summary>
+        /// returned score
+        /// </summary>
+        /// <returns>score</returns>
         public int GetScore()
         {
             return score;
 
         }
+        /// <summary>
+        /// returned score1
+        /// </summary>
+        /// <returns>score1</returns>
         public int GetScore1()
         {
             return score1;
         }
+        /// <summary>
+        /// returned hoeveel beurten er zijn geweest
+        /// </summary>
+        /// <returns>turnCount</returns>
         public int GetTurnCount()
         {
             return turnCount;

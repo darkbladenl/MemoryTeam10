@@ -26,7 +26,6 @@ namespace memorygame
         private const int rows = 4;
         MemoryGrid grid;
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -35,10 +34,7 @@ namespace memorygame
 
 
         }
-        void MainWindow_Closing(object sender, CancelEventArgs e)
-        {
-            Save();
-        }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow MainWindow = new MainWindow();
@@ -51,8 +47,14 @@ namespace memorygame
         {
             Window1 Window1 = new Window1();
             Window1.Show();
-            this.Close();
+            Close();
         }
+
+        void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            Save();
+        }
+
         public void Save()
         {
             string score = grid.GetScore() + Environment.NewLine;
