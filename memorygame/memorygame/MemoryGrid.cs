@@ -29,12 +29,13 @@ namespace memorygame
         private List<Image> seenCards = new List<Image>();                  
         //lijst met kaartjes die opgelost zijn
         private List<Image> solvedCards = new List<Image>();
+        //int turnCount = 1;
 
         private int score = Convert.ToInt32(File.ReadLines("memory.sav").Skip(0).Take(1).First());//score
         private int score1 = Convert.ToInt32(File.ReadLines("memory.sav").Skip(1).Take(1).First());//score
         //int score = 0;
         //int score1 = 0;
-        private SolidColorBrush scoreboardBG = (SolidColorBrush)new BrushConverter().ConvertFromString(File.ReadLines("memory.sav").Skip(2).Take(1).First());
+        private int turnCount = Convert.ToInt32(File.ReadLines("memory.sav").Skip(2).Take(1).First());
         private SolidColorBrush scoreboard1BG = (SolidColorBrush)new BrushConverter().ConvertFromString(File.ReadLines("memory.sav").Skip(3).Take(1).First());
         //SolidColorBrush scoreboard1BG = Brushes.White;
 
@@ -157,7 +158,7 @@ namespace memorygame
                 {                                       
                     solvedCards.Add(card);
 
-                    if (scoreboard1.Background == Brushes.White)
+                    if (turnCount % 2 == 1)
                     {
                         score = score + 100;
                         scoreboard.Content = "Player1: \n" + score;
@@ -169,12 +170,13 @@ namespace memorygame
                     }
                 }
                 else
-                {                    
+                {
+                    turnCount++;
                     await PutTaskDelay();
                     card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     
-                    if (scoreboard1.Background == Brushes.White)
+                    if (turnCount % 2 == 1)
                     {
                         scoreboard1.Background = Brushes.Blue; 
                         scoreboard.Background = Brushes.White;
