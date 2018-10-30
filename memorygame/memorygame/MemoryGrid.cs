@@ -261,7 +261,7 @@ namespace memorygame
             scoreboard1.Background = null;
             score = 0;
             score1 = 0;
-            scoreboard.Content = Naam + score;
+            scoreboard.Content = score;
             scoreboard1.Content = "Player2: \n" + score1;
             grid.Children.Add(resetBtn);
             AddCards();

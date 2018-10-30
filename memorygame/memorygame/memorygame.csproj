@@ -105,27 +105,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images_Front\1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images_Rear\DC_Comics_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images_Front\3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images_Front\2.png" />
-    <Resource Include="Resources\Images_Front\4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images_Front\5.png" />
-    <Resource Include="Resources\Images_Front\6.png" />
-    <Resource Include="Resources\Images_Front\8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images_Front\7.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +112,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\achtergrond-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Front\1.png" />
+    <Resource Include="Resources\Images_Front\2.png" />
+    <Resource Include="Resources\Images_Front\3.png" />
+    <Resource Include="Resources\Images_Front\5.png" />
+    <Resource Include="Resources\Images_Front\6.png" />
+    <Resource Include="Resources\Images_Front\7.png" />
+    <Resource Include="Resources\Images_Front\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Rear\DC_Comics_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images_Front\4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
