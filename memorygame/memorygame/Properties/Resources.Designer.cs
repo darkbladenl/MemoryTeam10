@@ -59,14 +59,5 @@ namespace memorygame.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Nice_Meme {
-            get {
-                return ResourceManager.GetStream("Nice_Meme", resourceCulture);
-            }
-        }
     }
 }

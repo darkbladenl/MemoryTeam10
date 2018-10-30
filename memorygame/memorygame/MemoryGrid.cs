@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
+using System.IO;
 
 namespace memorygame
 {
@@ -27,15 +28,20 @@ namespace memorygame
         //lijst met kaartjes die al eens gezien zijn
         private List<Image> seenCards = new List<Image>();                  
         //lijst met kaartjes die opgelost zijn
-        private List<Image> SolvedCards = new List<Image>();
+        private List<Image> solvedCards = new List<Image>();
 
-        int score = 0;//score
-        int score1 = 0;
+        private int score = Convert.ToInt32(File.ReadLines("memory.sav").Skip(0).Take(1).First());//score
+        private int score1 = Convert.ToInt32(File.ReadLines("memory.sav").Skip(1).Take(1).First());//score
+        //int score = 0;
+        //int score1 = 0;
+        private SolidColorBrush scoreboardBG = (SolidColorBrush)new BrushConverter().ConvertFromString(File.ReadLines("memory.sav").Skip(2).Take(1).First());
+        private SolidColorBrush scoreboard1BG = (SolidColorBrush)new BrushConverter().ConvertFromString(File.ReadLines("memory.sav").Skip(3).Take(1).First());
+        //SolidColorBrush scoreboard1BG = Brushes.White;
 
-        Label scoreboard = new Label();//scorebord
-        Label scoreboard1 = new Label();
-        Button resetBtn = new Button();//resetknop
-        Button quitBtn = new Button();//sluitknop
+        private Label scoreboard = new Label();//scorebord
+        private Label scoreboard1 = new Label();
+        private Button resetBtn = new Button();//resetknop
+        
         //CONSTRUCTORS
         /// <summary>
         /// MemoryGrid bestaat uit een grid met rijen en kolommen, met daarin: Images en Labels
@@ -149,9 +155,9 @@ namespace memorygame
             {                              
                 if (openCards[0] == openCards[1])
                 {                                       
-                    SolvedCards.Add(card);
+                    solvedCards.Add(card);
 
-                    if (scoreboard1.Background == null)
+                    if (scoreboard1.Background == Brushes.White)
                     {
                         score = score + 100;
                         scoreboard.Content = "Player1: \n" + score;
@@ -162,29 +168,29 @@ namespace memorygame
                         scoreboard1.Content = "Player2: \n" + score1;
                     }
                 }
-                if (!(openCards[0] == openCards[1]))
+                else
                 {                    
                     await PutTaskDelay();
                     card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                     
-                    if (scoreboard1.Background == null)
+                    if (scoreboard1.Background == Brushes.White)
                     {
-                        scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
-                        scoreboard.Background = null;
+                        scoreboard1.Background = Brushes.Blue; 
+                        scoreboard.Background = Brushes.White;
                         
                     }
                     else
                     {
-                        scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
-                        scoreboard1.Background = null;
+                        scoreboard.Background = Brushes.Blue; 
+                        scoreboard1.Background = Brushes.White;
                         
                     }                    
                 }
                 seenCards.RemoveRange(0, 2);
                 openCards.RemoveRange(0, 2);                                
             }    
-            if(SolvedCards.Count == 8)
+            if(solvedCards.Count == 8)
             {
                 if (score > score1)
                 {
@@ -213,7 +219,7 @@ namespace memorygame
         {
             scoreboard.Content = "Player1: \n" + score;
             scoreboard.FontSize = 40;
-            scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            scoreboard.Background = scoreboardBG;
             scoreboard.HorizontalAlignment = HorizontalAlignment.Left;
             Grid.SetRow(scoreboard, 0);
             Grid.SetColumn(scoreboard, 5);
@@ -223,9 +229,9 @@ namespace memorygame
         //SCOREBORD1
         private void AddScoreboard1()
         {
-            scoreboard1.Content = "Player2: \n" + score;
+            scoreboard1.Content = "Player2: \n" + score1;
             scoreboard1.FontSize = 40;
-            scoreboard1.Background = null;
+            scoreboard1.Background = scoreboard1BG;
             scoreboard1.HorizontalAlignment = HorizontalAlignment.Left;
             Grid.SetRow(scoreboard1, 1);
             Grid.SetColumn(scoreboard1, 5);
@@ -238,7 +244,7 @@ namespace memorygame
             resetBtn.Content = "RESET";
             resetBtn.FontSize = 30;
             resetBtn.Foreground = Brushes.White;
-            resetBtn.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            resetBtn.Background = Brushes.Blue;
             resetBtn.Height = 50;
             resetBtn.Click += ResetGame;
             Grid.SetRow(resetBtn, 2);
@@ -249,7 +255,7 @@ namespace memorygame
         {
             grid.Children.Clear();
 
-            SolvedCards.Clear();
+            solvedCards.Clear();
             openCards.Clear();
             seenCards.Clear();
 
@@ -257,8 +263,8 @@ namespace memorygame
             cards.AddRange(newCards);
             grid.Children.Add(scoreboard);
             grid.Children.Add(scoreboard1);
-            scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
-            scoreboard1.Background = null;
+            scoreboard.Background = Brushes.Blue;
+            scoreboard1.Background = Brushes.White;
             score = 0;
             score1 = 0;
             scoreboard.Content = "Player1: \n" + score;
@@ -266,6 +272,26 @@ namespace memorygame
             grid.Children.Add(resetBtn);
             AddCards();
 
+        }
+
+        public int GetScore()
+        {
+            return score;
+        }
+
+        public int GetScore1()
+        {
+            return score1;
+        }
+
+        public Brush GetScoreboardBG()
+        {
+            return scoreboard.Background;
+        }
+
+        public Brush GetScoreboard1BG()
+        {
+            return scoreboard1.Background;
         }
     }
 }
