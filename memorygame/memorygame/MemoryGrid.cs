@@ -28,6 +28,8 @@ namespace memorygame
         private List<Image> seenCards = new List<Image>();
         //lijst met kaartjes die opgelost zijn
         private List<Image> SolvedCards = new List<Image>();
+        private List<int> clickRow = new List<int>();
+        private List<int> clickColumn = new List<int>();
 
         int score = 0;//score
         int score1 = 0;
@@ -135,71 +137,107 @@ namespace memorygame
         private async void CardClick(object sender, MouseButtonEventArgs e)
         {
 
-            Image card = (Image)sender;
-            ImageSource front = (ImageSource)card.Tag;
-            card.Source = front;
-
-
-            openCards.Add(front.Height);
-            seenCards.Add(card);
-
-
-
+            var element = (UIElement)e.Source;
+            int row = Grid.GetRow(element);
+            int column = Grid.GetColumn(element);
+            bool doubleClickColumn = clickColumn.Contains(column);
+            bool doubleClickRow = clickRow.Contains(row);
+            bool disableSolved = SolvedCards.Contains(sender);
             if (openCards.Count == 2)
             {
-                if (openCards[0] == openCards[1])
-                {
-                    SolvedCards.Add(card);
-
-                    if (scoreboard1.Background == null)
-                    {
-                        score = score + 100;
-                        scoreboard.Content = "Player1: \n" + score;
-                    }
-                    else
-                    {
-                        score1 = score1 + 100;
-                        scoreboard1.Content = "Player2: \n" + score1;
-                    }
-                }
-                if (!(openCards[0] == openCards[1]))
-                {
-                    await PutTaskDelay();
-                    card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
-                    seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
-
-                    if (scoreboard1.Background == null)
-                    {
-                        scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
-                        scoreboard.Background = null;
-
-                    }
-                    else
-                    {
-                        scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
-                        scoreboard1.Background = null;
-
-                    }
-                }
-                seenCards.RemoveRange(0, 2);
-                openCards.RemoveRange(0, 2);
+                return;
             }
-            if (SolvedCards.Count == 8)
+            else if (doubleClickRow == true && doubleClickColumn == true)
             {
-                if (score > score1)
+
+                if (openCards.Count == 2)
                 {
-                    MessageBox.Show("Player1 WIN");
+                    clickRow.Clear();
+                    clickColumn.Clear();
+                }
+                return;
+            }
+            else if (disableSolved == true)
+            {
+                return;
+
+            }
+            else
+            {
+                Image card = (Image)sender;
+                ImageSource front = (ImageSource)card.Tag;
+                card.Source = front;
+
+
+                clickRow.Add(row);
+                clickColumn.Add(column);
+                openCards.Add(front.Height);
+                seenCards.Add(card);
+
+
+
+                if (openCards.Count == 2)
+                {
+                    clickRow.Clear();
+                    clickColumn.Clear();
+                    if (openCards[0] == openCards[1])
+                    {
+                        SolvedCards.Add(seenCards[0]);
+                        SolvedCards.Add(seenCards[1]);
+
+                        if (scoreboard1.Background == null)
+                        {
+                            score = score + 100;
+                            scoreboard.Content = "Player1: \n" + score;
+                        }
+                        else
+                        {
+                            score1 = score1 + 100;
+                            scoreboard1.Content = "Player2: \n" + score1;
+                        }
+                    }
+
+                    if (!(openCards[0] == openCards[1]))
+                    {
+                        await PutTaskDelay();
+                        card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+                        seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
+
+
+                        if (scoreboard1.Background == null)
+                        {
+                            scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+                            scoreboard.Background = null;
+
+                        }
+                        else
+                        {
+                            scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+                            scoreboard1.Background = null;
+
+                        }
+                    }
+                    seenCards.RemoveRange(0, 2);
+                    openCards.RemoveRange(0, 2);
+                }
+                if (SolvedCards.Count == 16)
+                {
+                    if (score > score1)
+                    {
+                        MessageBox.Show("Player1 WIN");
+                    }
+
+                    if (score < score1)
+                    {
+                        MessageBox.Show("Player2 WIN");
+                    }
+
+                    if (score == score1)
+                    {
+                        MessageBox.Show("TIE");
+                    }
                 }
 
-                if (score < score1)
-                {
-                    MessageBox.Show("Player2 WIN");
-                }
-
-                if (score == score1)
-                {
-                    MessageBox.Show("TIE");
-                }
 
             }
         }
@@ -261,7 +299,11 @@ namespace memorygame
             scoreboard1.Background = null;
             score = 0;
             score1 = 0;
+<<<<<<< HEAD
             scoreboard.Content = score;
+=======
+            scoreboard.Content = "Player1: \n" + score;
+>>>>>>> 03c1505688e3c0f587a2703c98d05b5b8ef22fb6
             scoreboard1.Content = "Player2: \n" + score1;
             grid.Children.Add(resetBtn);
             AddCards();

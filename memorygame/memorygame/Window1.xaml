@@ -27,12 +27,12 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <TextBox x:Name="Naambox" HorizontalAlignment="Left" Height="51" Margin="370,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
+        <TextBox x:Name="Naambox" HorizontalAlignment="Left" Height="51" Margin="213,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label x:Name="label2" Content="Kies een gebruikersnaam!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,336,0,0" Width="450" FontFamily="Tekton" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="label2" Content="Kies uw gebruikersnamen!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,336,0,0" Width="450" FontFamily="Tekton" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
@@ -89,5 +89,41 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+        <TextBox x:Name="Naambox1" HorizontalAlignment="Left" Height="51" Margin="526,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Label x:Name="label4" Content="Gemaakt door:" HorizontalAlignment="Left" Height="36" Margin="834,10,-30.333,0" VerticalAlignment="Top" Width="233" FontFamily="Cambria" FontSize="25" FontWeight="Bold" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="IHtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,51,0,0" Text="Ido Hiemstra" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JHtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,80,0,0" Text="Joey Hovinga" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="RtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,107,0,0" Text="Reindert Visser" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="MtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,135,0,0" Text="Micky Cheng" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JGtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,163,0,0" Text="Joop de Graaf" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <Button Opacity="0" x:Name="button1" Content="" HorizontalAlignment="Left" Height="28" Margin="834,79,0,0" VerticalAlignment="Top" Width="127" Click="button1_Click"/>
     </Grid>
 </Window>

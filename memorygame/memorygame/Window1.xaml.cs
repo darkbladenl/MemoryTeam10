@@ -26,6 +26,7 @@ namespace memorygame
         public string Gamemode;
         public string Thema;
         public string Naam;
+        public string Naam1;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -44,19 +45,27 @@ namespace memorygame
         {
             Naam = Naambox.Text.ToString();
 
-            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "" && Naambox1.Text != "")
             {
                 BtnSpelen.IsEnabled = true;
             }
         }
+        private void Naambox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Naam1 = Naambox.Text.ToString();
 
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "" && Naambox1.Text != "")
+            {
+                BtnSpelen.IsEnabled = true;
+            }
+        }
         private void Scores_Click(object sender, RoutedEventArgs e)
         {
             Gamemode = "Scores";
             Scores.Background = Scores.Background == Brushes.Red ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.Red;
             Timer.Background = Timer.Background == Brushes.LightGray ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.LightGray;
 
-            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "" && Naambox1.Text != "")
             {
                 BtnSpelen.IsEnabled = true;
             }
@@ -68,7 +77,7 @@ namespace memorygame
             Timer.Background = Timer.Background == Brushes.Red ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.Red;
             Scores.Background = Scores.Background == Brushes.LightGray ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFDDDDDD")) : Brushes.LightGray;
 
-            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "" && Naambox1.Text != "")
             {
                 BtnSpelen.IsEnabled = true;
             }
@@ -81,10 +90,17 @@ namespace memorygame
             ///label1.Content = Thema;
 
 
-            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "")
+            if (ComboBox.Text != "" && Naambox.Text != "" && Gamemode != "" && Naambox1.Text != "")
             {
                 BtnSpelen.IsEnabled = true;
             }
+        }
+
+      
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            JHtextBlock.Text = "🅱️oey Hovinga";
         }
     }
 }

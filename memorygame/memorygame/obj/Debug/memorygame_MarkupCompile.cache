@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\
+=======
+C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\obj\Debug\
+>>>>>>> 03c1505688e3c0f587a2703c98d05b5b8ef22fb6
 memorygame
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Joopst\Documents\GitHub\MemoryTeam10\memorygame\memorygame\App.xaml
+=======
+C:\Users\rfvis\OneDrive\Documenten\GitHub\MemoryTeam10\memorygame\memorygame\App.xaml
+>>>>>>> 03c1505688e3c0f587a2703c98d05b5b8ef22fb6
 2462529049
 
 71749410762
