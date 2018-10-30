@@ -282,6 +282,7 @@ namespace memorygame
             Grid.SetRow(resetBtn, 2);
             Grid.SetColumn(resetBtn, 5);
             grid.Children.Add(resetBtn);
+
         }
         private void ResetGame(object sender, RoutedEventArgs e)
         {
@@ -290,6 +291,8 @@ namespace memorygame
             SolvedCards.Clear();
             openCards.Clear();
             seenCards.Clear();
+            clickRow.Clear();
+            clickColumn.Clear();
 
 
             cards.AddRange(newCards);
