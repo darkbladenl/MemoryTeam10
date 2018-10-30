@@ -39,13 +39,13 @@ namespace memorygame
         {
             Save();
         }
-            private void Button_Click(object sender, RoutedEventArgs e)
-            {
-                MainWindow MainWindow = new MainWindow();
-                MainWindow.Show();
-                this.Close();
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MainWindow = new MainWindow();
+            MainWindow.Show();
+            Close();
 
-            }
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -60,8 +60,8 @@ namespace memorygame
             string turn = grid.GetTurnCount() + Environment.NewLine;
 
             File.WriteAllText("memory.sav", score);
-            File.WriteAllText("memory.sav", score1);
-            File.WriteAllText("memory.sav", turn);
+            File.AppendAllText("memory.sav", score1);
+            File.AppendAllText("memory.sav", turn);
 
         }
     }

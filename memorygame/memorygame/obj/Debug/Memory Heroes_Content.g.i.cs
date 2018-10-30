@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/1920x1200-2959037-minimalism-artwork-simple-background-batman-superman-" +
-    "dc-comics-humor-wtf___abstract-wallpapers.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icon.ico")]
 
 

@@ -43,7 +43,7 @@ namespace memorygame
         Label scoreboard = new Label();//scorebord
         Label scoreboard1 = new Label();
         Button resetBtn = new Button();//resetknop
-        Button quitBtn = new Button();//sluitknop
+        
         //CONSTRUCTORS
         /// <summary>
         /// MemoryGrid bestaat uit een grid met rijen en kolommen, met daarin: Images en Labels
@@ -177,6 +177,7 @@ namespace memorygame
 
                 clickRow.Add(row);
                 clickColumn.Add(column);
+
                 openCards.Add(front.Height);
                 seenCards.Add(card);
 
@@ -188,8 +189,9 @@ namespace memorygame
                     clickColumn.Clear();
                     if (openCards[0] == openCards[1])
                     {
-                        SolvedCards.Add(seenCards[0]);
-                        SolvedCards.Add(seenCards[1]);
+                        //SolvedCards.Add(seenCards[0]);
+                        //SolvedCards.Add(seenCards[1]);
+                        SolvedCards.AddRange(seenCards);
 
                         if (turnCount % 2 == 1)
                         {
@@ -257,8 +259,16 @@ namespace memorygame
         private void AddScoreboard()
         {
             scoreboard.Content = "Player1: \n" + score;
-            scoreboard.FontSize = 40;
-            scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            scoreboard.FontSize = 35;
+            if (turnCount % 2 == 0)
+            {
+                scoreboard.Background = null;
+            }
+            else
+            {
+                scoreboard.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            }
+            
             scoreboard.HorizontalAlignment = HorizontalAlignment.Left;
             Grid.SetRow(scoreboard, 0);
             Grid.SetColumn(scoreboard, 5);
@@ -268,9 +278,18 @@ namespace memorygame
         //SCOREBORD1
         private void AddScoreboard1()
         {
-            scoreboard1.Content = "Player2: \n" + score;
-            scoreboard1.FontSize = 40;
-            scoreboard1.Background = null;
+            scoreboard1.Content = "Player2: \n" + score1;
+            scoreboard1.FontSize = 35;
+            if (turnCount % 2 == 0)
+            {
+                scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
+            }
+            else
+            {
+                scoreboard1.Background = null;
+            }
+        
+            
             scoreboard1.HorizontalAlignment = HorizontalAlignment.Left;
             Grid.SetRow(scoreboard1, 1);
             Grid.SetColumn(scoreboard1, 5);
@@ -300,7 +319,7 @@ namespace memorygame
             seenCards.Clear();
             clickRow.Clear();
             clickColumn.Clear();
-
+            turnCount = 1;
 
             cards.AddRange(newCards);
             grid.Children.Add(scoreboard);

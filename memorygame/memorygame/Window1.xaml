@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:memorygame"
         mc:Ignorable="d"
-        Title="Window1" Height="612.016" Width="1043.077" Icon="Resources/icon.png">
+        Title="Memorygame" Height="500" Width="664" 
+        ResizeMode="NoResize" Topmost="False" 
+        WindowState="Normal" Icon="Resources/icon.png" 
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <Image x:Name="background" Source="Resources/achtergrond-1.jpg" Stretch="UniformToFill" IsEnabled="True" Margin="1,0,-0.333,-0.333">
+        <Image x:Name="background" Source="Resources/achtergrond-1.jpg" Stretch="UniformToFill" IsEnabled="True" Margin="0,0,0.333,0">
             <Image.Effect>
                 <DropShadowEffect/>
             </Image.Effect>
         </Image>
-        <Button x:Name="BtnSpelen" Content="Spelen!" HorizontalAlignment="Center" Height="69" Margin="370,479,367.667,0" VerticalAlignment="Top" Width="299" Click="Button_Click" FontFamily="Comic Sans MS" FontSize="36" IsEnabled="False" TabIndex="5">
+        <Button x:Name="BtnSpelen" Content="Spelen!" HorizontalAlignment="Center" Height="61" Margin="197,361,194.667,0" VerticalAlignment="Top" Width="267" Click="Button_Click" FontFamily="Comic Sans MS" FontSize="36" IsEnabled="False" TabIndex="5">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -22,17 +25,17 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="label" Content="Memorygame" HorizontalAlignment="Left" Height="109" Margin="291,10,0,0" VerticalAlignment="Top" Width="487" FontFamily="Ebrima" FontSize="69" Foreground="White" FontWeight="Bold" TextOptions.TextHintingMode="Fixed">
+        <Label x:Name="label" Content="Memorygame" HorizontalAlignment="Left" Height="79" Margin="193,10,0,0" VerticalAlignment="Top" Width="278" FontFamily="Ebrima" FontSize="40" Foreground="White" FontWeight="Bold" TextOptions.TextHintingMode="Fixed">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <TextBox x:Name="Naambox" HorizontalAlignment="Left" Height="51" Margin="213,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
+        <TextBox x:Name="Naambox" HorizontalAlignment="Left" Height="30" Margin="162,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontFamily="Tekton Pro" FontSize="15" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label x:Name="label2" Content="Kies uw gebruikersnamen!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,336,0,0" Width="450" FontFamily="Tekton" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="label2" Content="Kies uw gebruikersnamen!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,266,0,0" Width="236" FontFamily="Tekton" Foreground="White" FontSize="20" RenderTransformOrigin="0.5,0.5" Height="38">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
@@ -45,17 +48,17 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="Timer" Content="Timer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="526,157,0,0" Height="48" FontFamily="Ravie" FontSize="22" Click="Timer_Click" Background="#FFDDDDDD" TabIndex="2">
+        <Button x:Name="Timer" Content="Timer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="353,116,0,0" Height="48" FontFamily="Ravie" FontSize="22" Click="Timer_Click" Background="#FFDDDDDD" TabIndex="2" IsEnabled="false">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="Scores" Content="Scores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="370,157,0,0" Height="48" FontFamily="Ravie" FontSize="22" Click="Scores_Click" TabIndex="1">
+        <Button x:Name="Scores" Content="Scores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="186,116,0,0" Height="48" FontFamily="Ravie" FontSize="22" Click="Scores_Click" TabIndex="1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label x:Name="label1" Content="Kies een spelmodus!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="347,112,0,0" Width="374" FontFamily="Tekton Pro" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="label1" Content="Kies een spelmodus!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,68,0,0" Width="205" FontFamily="Tekton Pro" Foreground="White" FontSize="20" RenderTransformOrigin="0.5,0.5">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
@@ -68,62 +71,56 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <ComboBox x:Name="ComboBox" HorizontalAlignment="Center" Height="54" Margin="370,283,367.667,0" VerticalAlignment="Top" Width="299" FontSize="22" FontFamily="Segoe UI Black" SelectionChanged="comboBox_SelectionChanged" TabIndex="4">
+        <ComboBox x:Name="ComboBox" HorizontalAlignment="Center" Height="26" Margin="186,207,187.667,0" VerticalAlignment="Top" Width="285" FontSize="15" FontFamily="Segoe UI Black" SelectionChanged="comboBox_SelectionChanged" TabIndex="4">
             <ComboBox.Effect>
                 <DropShadowEffect/>
             </ComboBox.Effect>
-            <ComboBoxItem Content="Spiderman" FontSize="22" FontFamily="Segoe UI Black"></ComboBoxItem>
-            <ComboBoxItem Content="Deadpool" FontSize="22" FontFamily="Segoe UI Black"></ComboBoxItem>
-            <ComboBoxItem Content="Batman" FontSize="22" FontFamily="Segoe UI Black"></ComboBoxItem>
+            <ComboBoxItem Content="Spiderman" FontSize="15" FontFamily="Segoe UI Black"></ComboBoxItem>
+            <ComboBoxItem Content="Deadpool" FontSize="15" FontFamily="Segoe UI Black"></ComboBoxItem>
+            <ComboBoxItem Content="Batman" FontSize="15" FontFamily="Segoe UI Black"></ComboBoxItem>
+            <ComboBoxItem Content="Logos" FontSize="15" FontFamily="Segoe UI Black"></ComboBoxItem>
         </ComboBox>
-        <Label x:Name="label3" Content="Kies een thema!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="376,226,0,0" Width="352" FontFamily="Tekton Pro" Foreground="White" FontSize="38" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="label3" Content="Kies een thema!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,169,0,0" Width="150" FontFamily="Tekton Pro" Foreground="White" FontSize="20" RenderTransformOrigin="0.5,0.5">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.534"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
+
         </Label>
-        <TextBox x:Name="Naambox1" HorizontalAlignment="Left" Height="51" Margin="526,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" FontFamily="Tekton Pro" FontSize="30" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
+        <TextBox x:Name="Naambox1" HorizontalAlignment="Left" Height="30" Margin="355,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontFamily="Tekton Pro" FontSize="16" RenderTransformOrigin="0.5,0.5" TextChanged="Naambox_TextChanged" TabIndex="3">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label x:Name="label4" Content="Gemaakt door:" HorizontalAlignment="Left" Height="36" Margin="834,10,-30.333,0" VerticalAlignment="Top" Width="233" FontFamily="Cambria" FontSize="25" FontWeight="Bold" Foreground="White">
+        <Label x:Name="label4" Content="Gemaakt door:" HorizontalAlignment="Left" Height="36" Margin="512,10,-82.333,0" VerticalAlignment="Top" Width="233" FontFamily="Cambria" FontSize="15" FontWeight="Bold" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="IHtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,51,0,0" Text="Ido Hiemstra" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="IHtextBlock" HorizontalAlignment="Left" Height="28" Margin="517,46,-5.333,0" Text="Ido Hiemstra" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="20">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JHtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,80,0,0" Text="Joey Hovinga" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JHtextBlock" HorizontalAlignment="Left" Height="28" Margin="517,71,-5.333,0" Text="Joey Hovinga" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="20">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="RtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,107,0,0" Text="Reindert Visser" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="RtextBlock" HorizontalAlignment="Left" Height="28" Margin="517,99,-5.333,0" Text="Reindert Visser" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="20">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="MtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,135,0,0" Text="Micky Cheng" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="MtextBlock" HorizontalAlignment="Left" Height="28" Margin="517,127,-5.333,0" Text="Micky Cheng" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="20">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JGtextBlock" HorizontalAlignment="Left" Height="28" Margin="834,163,0,0" Text="Joop de Graaf" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="22">
+        <TextBlock  TextWrapping="WrapWithOverflow" x:Name="JGtextBlock" HorizontalAlignment="Left" Height="28" Margin="517,155,-5.333,0" Text="Joop de Graaf" VerticalAlignment="Top" Width="151" Foreground="#FFFFFDFD" FontFamily="Cambria Math" FontSize="20">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <Button Opacity="0" x:Name="button1" Content="" HorizontalAlignment="Left" Height="28" Margin="834,79,0,0" VerticalAlignment="Top" Width="127" Click="button1_Click"/>
+        <Button Opacity="0" x:Name="button1" Content="" HorizontalAlignment="Left" Height="28" Margin="512,71,0,0" VerticalAlignment="Top" Width="127" Click="button1_Click"/>
     </Grid>
 </Window>
