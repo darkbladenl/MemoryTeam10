@@ -143,7 +143,11 @@ namespace memorygame
             bool doubleClickColumn = clickColumn.Contains(column);
             bool doubleClickRow = clickRow.Contains(row);
             bool disableSolved = SolvedCards.Contains(sender);
-            if (doubleClickRow == true && doubleClickColumn == true)
+            if (openCards.Count == 2)
+            {
+                return;
+            }
+            else if (doubleClickRow == true && doubleClickColumn == true)
             {
 
                 if (openCards.Count == 2)
