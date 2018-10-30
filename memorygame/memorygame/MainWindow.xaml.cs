@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -12,7 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace memorygame
 {
@@ -32,12 +34,34 @@ namespace memorygame
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, cols, rows);
-            //var notificationSound = new SoundPlayer(Properties.Resources.Nice_Meme);
-            //notificationSound.PlaySync();
-
-
+            Closing += new CancelEventHandler(MainWindow_Closing);
         }
-        
+
+
+
+
+
+
+        void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            Save();
+        }
+
+
+
+
+        public void Save()
+        {
+            string score = grid.GetScore() + Environment.NewLine;
+            string score1 = grid.GetScore1() + Environment.NewLine;
+            string scoreBG = grid.GetScoreboardBG() + Environment.NewLine;
+            string score1BG = grid.GetScoreboard1BG() + Environment.NewLine;
+
+            File.WriteAllText("memory.sav", score);
+            File.AppendAllText("memory.sav", score1);
+            File.AppendAllText("memory.sav", scoreBG);
+            File.AppendAllText("memory.sav", score1BG);
+        }
 
     }   
 }
