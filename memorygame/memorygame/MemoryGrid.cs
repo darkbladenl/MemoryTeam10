@@ -299,11 +299,11 @@ namespace memorygame
             scoreboard1.Background = null;
             score = 0;
             score1 = 0;
-<<<<<<< HEAD
+
             scoreboard.Content = score;
-=======
+
             scoreboard.Content = "Player1: \n" + score;
->>>>>>> 03c1505688e3c0f587a2703c98d05b5b8ef22fb6
+
             scoreboard1.Content = "Player2: \n" + score1;
             grid.Children.Add(resetBtn);
             AddCards();
