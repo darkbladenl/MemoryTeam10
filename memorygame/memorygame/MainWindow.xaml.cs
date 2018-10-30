@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +31,13 @@ namespace memorygame
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, cols, rows);
+            Closing += new CancelEventHandler(MainWindow_Closing);
 
 
+        }
+        void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            Save();
         }
             private void Button_Click(object sender, RoutedEventArgs e)
             {
@@ -46,5 +53,17 @@ namespace memorygame
             Window1.Show();
             this.Close();
         }
+        public void Save()
+        {
+            string score = grid.GetScore() + Environment.NewLine;
+            string score1 = grid.GetScore1() + Environment.NewLine;
+            string turn = grid.GetTurnCount() + Environment.NewLine;
+
+            File.WriteAllText("memory.sav", score);
+            File.WriteAllText("memory.sav", score1);
+            File.WriteAllText("memory.sav", turn);
+
+        }
     }
-    }
+    
+}

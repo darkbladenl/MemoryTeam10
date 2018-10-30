@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Input;
+using System.IO;
 
 namespace memorygame
 {
@@ -30,9 +31,14 @@ namespace memorygame
         private List<Image> SolvedCards = new List<Image>();
         private List<int> clickRow = new List<int>();
         private List<int> clickColumn = new List<int>();
+        //new int turnCount = 1;
 
-        int score = 0;//score
-        int score1 = 0;
+        private int score = Convert.ToInt32(File.ReadLines("memory.sav").Skip(0).Take(1).First());
+        private int score1 = Convert.ToInt32(File.ReadLines("memory.sav").Skip(1).Take(1).First());
+
+        //int score = 0;//score
+        //int score1 = 0;
+        private int turnCount = Convert.ToInt32(File.ReadLines("memory.sav").Skip(2).Take(1).First());
 
         Label scoreboard = new Label();//scorebord
         Label scoreboard1 = new Label();
@@ -185,7 +191,7 @@ namespace memorygame
                         SolvedCards.Add(seenCards[0]);
                         SolvedCards.Add(seenCards[1]);
 
-                        if (scoreboard1.Background == null)
+                        if (turnCount % 2 == 1)
                         {
                             score = score + 100;
                             scoreboard.Content = "Player1: \n" + score;
@@ -199,12 +205,13 @@ namespace memorygame
 
                     if (!(openCards[0] == openCards[1]))
                     {
+                        turnCount++;
                         await PutTaskDelay();
                         card.Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
                         seenCards[0].Source = new BitmapImage(new Uri("Resources/Images_Rear/DC_Comics_logo.png", UriKind.Relative));
 
 
-                        if (scoreboard1.Background == null)
+                        if (turnCount % 2 == 0)
                         {
                             scoreboard1.Background = new SolidColorBrush(Color.FromRgb(2, 119, 243));
                             scoreboard.Background = null;
@@ -308,5 +315,20 @@ namespace memorygame
             AddCards();
 
         }
+        public int GetScore()
+        {
+            return score;
+
+        }
+        public int GetScore1()
+        {
+            return score1;
+        }
+        public int GetTurnCount()
+        {
+            return turnCount;
+        }
+        
     }
+    
 }
